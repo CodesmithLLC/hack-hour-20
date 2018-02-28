@@ -16,8 +16,6 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
-
-}
+const fizzbuzz = (n, ret = new Array(n)) => Array.from(ret).map((e, i) => (i % 3 === 0 && i % 5 === 0) ? 'fizzbuzz' : i % 3 === 0 ? 'fizz' : i % 5 === 0 ? 'buzz' : i);
 
 module.exports = fizzbuzz;
