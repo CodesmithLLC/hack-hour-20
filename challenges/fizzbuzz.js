@@ -17,7 +17,33 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
-}
+    function range(stop) {
+      const arrNum = [];
+      let i = 1;
+      while (i <= stop) {
+        arrNum.push(i);
+        i++;
+      }
+      return arrNum;
+    }
+  
+    const arrNumbers = range(num);
+  
+    function modifyNumbers3And5(arr) {
+      return arr.map((el) => {
+        if (el % 3 === 0 && el % 5 === 0) {
+          el = 'fizzbuzz';
+        } else if (el % 5 === 0) {
+          el = 'buzz';
+        } else if (el % 3 === 0) {
+          el = 'fizz';
+        }
+        return el;
+      });
+    }
+    return modifyNumbers3And5(arrNumbers);
+  }
+  
+  fizzbuzz(100);
 
 module.exports = fizzbuzz;
