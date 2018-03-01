@@ -18,6 +18,5 @@ function drawStairs(n) {
         console.log(' '.repeat(n-i)+'*'.repeat(i));
     }
 }
-console.log(drawStairs(6));
 
 module.exports = drawStairs;
