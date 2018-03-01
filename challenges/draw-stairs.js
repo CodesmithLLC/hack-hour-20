@@ -14,8 +14,23 @@
 */
 
 function drawStairs(n) {
+    let startPoint = "*";
+    for(let i = 0; i < n; i++){ 
+        startPoint = " ".concat(startPoint); 
+    }
+    
+    let newSP = startPoint.split("");
+    console.log(newSP.join(""));
+    for(let i = 0; i<n; i ++){ 
+        newSP.shift();
+        newSP.push("*") 
+        console.log(newSP.join("")); 
+    }
+    console.log
 
 }
+
+drawStairs(16); 
 
 
 module.exports = drawStairs;
