@@ -30,7 +30,7 @@ function drawStairs(n) {
       console.log(stair);
     }
   } else {
-    console.log('Please input a number between 1 and 100');
+    console.log('Please choose a number between 1 and 100');
   }
 }
 
