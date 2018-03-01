@@ -14,8 +14,17 @@
 */
 
 function drawStairs(n) {
-
+    let steps = [];
+	for (var i = 0; i < n +1; i++) {
+		steps.push(" ");
+	} // put items in array
+	for (var j = n; j > 0; j--) {
+		steps.splice(j,1,"*");
+		console.log(steps);
+		//console.log(steps.toString().replace(","));
+	}
+	
 }
 
-
+console.log(drawStairs(4));
 module.exports = drawStairs;
