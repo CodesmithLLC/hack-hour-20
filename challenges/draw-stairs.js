@@ -13,9 +13,14 @@
 
 */
 
-function drawStairs(n) {
-
-}
+const drawStairs = (n) => {
+    for (let i = 0; i < n; i++) {
+        const s = [];
+        for (let j = n - i - 1; j > 0; j--) s.push(' ');
+        for (let j = i + 1; j > 0; j--) s.push('*');
+        console.log(s.join(''));
+    }
+};
 
 
 module.exports = drawStairs;
