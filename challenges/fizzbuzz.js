@@ -57,7 +57,7 @@ function fizzbuzz(num) {
   // second if statement, reassigning value of curr
 }
 
-console.log(fizzbuzz(16));
+// console.log(fizzbuzz(16));
 
 
 
