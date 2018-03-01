@@ -14,7 +14,21 @@
 */
 
 function drawStairs(n) {
-
+    //need to create variables for empty space, star, and stair
+    let space, star, stair;
+// loop through up until number - the stairs are going to be n
+//wide at their widest and n tall at their tallest
+    for (var i = 0; i < n; i++){
+      //space is decreasing each loop
+        space = n - 1 - i;
+        //star is increasing each loop
+        star = i + 1;
+        //create string - empty for space, star for star 
+        //use repeat method with values of space and star as arguments
+        stair = ' '.repeat(space) + '*'.repeat(star);
+        //print out your stair
+        console.log(stair);    
+    }  
 }
 
 
