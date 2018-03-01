@@ -13,7 +13,7 @@
 
 */
 
-function drawStairs(n) {
+function drawStairs (n) {
   for (let lines = 1; lines <= n; lines++) {
     let starSpaces = '';
     for (let spaces = 1; spaces < -lines + 5; spaces++) {
