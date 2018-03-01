@@ -17,6 +17,7 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+// Practice adding new branch and merging
   let result = [];
   const div1 = 5;
   const div2 = 3;
