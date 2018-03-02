@@ -16,7 +16,7 @@
 function drawStairs (n) {
   for (let lines = 1; lines <= n; lines++) {
     let starSpaces = '';
-    for (let spaces = 1; spaces < -lines + 5; spaces++) {
+    for (let spaces = 1; spaces < -lines + n + 1; spaces++) {
       starSpaces += ' ';
     }
     for (let stars = 0; stars < lines; stars++) {
@@ -24,10 +24,12 @@ function drawStairs (n) {
     }
     console.log(starSpaces)
  }
- 
+
 }
 
 
 
 drawStairs(4)
+drawStairs(5)
+drawStairs(8)
 module.exports = drawStairs;
