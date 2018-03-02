@@ -19,20 +19,20 @@
 function fizzbuzz(num) {
 // Practice adding new branch and merging
   let result = [];
-  const div1 = 5;
-  const div2 = 3;
-  const div3 = div1*div2;
+  // const div1 = 5;
+  // const div2 = 3;
+  
   for (var i = 1; i <= num; i++) {
-    if (i % div3 == 0) {
+    if (i % 3 === 0 && i % 5 === 0) {
       result.push('fizzbuzz');
     }
-    else if (i % div1 == 0) {
+    else if (i % 3 === 0) {
       result.push('fizz');
     }
-    else if (i % div2 == 0) {
+    else if (i % 5 === 0) {
       result.push('buzz');
     }
-    else {
+    else { 
       result.push(i);
     }
   }
@@ -58,7 +58,7 @@ function fizzbuzz(num) {
   // second if statement, reassigning value of curr
 }
 
-// console.log(fizzbuzz(16));
+console.log(fizzbuzz(16));
 
 
 
