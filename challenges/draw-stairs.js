@@ -19,12 +19,14 @@ function space(n) {
 }
 
 function drawStairs(n) {
+    if (n >0 && n <=100) {
     let str = '';
     let blank = space(n);
   for (let i = 1; i <= n; i ++) {
       str += '*';
       blank = blank.slice(1)
       console.log( blank+ str);
+    }
   }
 }
 
