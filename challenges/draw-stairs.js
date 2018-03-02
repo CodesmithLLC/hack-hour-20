@@ -24,6 +24,7 @@ function drawStairs (n) {
     }
     console.log(starSpaces)
  }
+ 
 }
 
 
