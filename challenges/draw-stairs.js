@@ -27,9 +27,8 @@ function drawStairs(n) {
       blank = blank.slice(1)
       console.log( blank+ str);
     }
+    console.log('\n');
   }
 }
-
-
 
 module.exports = drawStairs;
