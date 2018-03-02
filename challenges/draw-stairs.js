@@ -14,7 +14,6 @@
 */
 
 function drawStairs(n) {
-let newLine = '\n';
 for(let i = 1; i <= n ; i++){
     let result = '';
     let diff = n - i;
@@ -27,10 +26,10 @@ for(let i = 1; i <= n ; i++){
         result += '*';
         numAst--;
     }
-console.log(result)
-}
+    console.log(result)
+    }
 }
 
 
 module.exports = drawStairs;
-drawStairs(6);
+drawStairs(100);
