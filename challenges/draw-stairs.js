@@ -39,4 +39,3 @@ return newStr;
 
 
 module.exports = drawStairs;
-console.log(drawStairs(6));
