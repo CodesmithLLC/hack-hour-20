@@ -14,23 +14,24 @@
 */
 
 function drawStairs(n) {
+    //create the starting point with enough spaces before the *
     let startPoint = "*";
-    for(let i = 0; i < n; i++){ 
+    for(let i = 1; i < n; i++){ 
         startPoint = " ".concat(startPoint); 
     }
-    
+    // log the first point
+    console.log(startPoint);
+    //create a starting point array so its muteable
     let newSP = startPoint.split("");
-    console.log(newSP.join(""));
-    for(let i = 0; i<n; i ++){ 
+    //traverse through array and add * the console.log
+    for(let i = 1; i<n; i ++){ 
         newSP.shift();
         newSP.push("*") 
         console.log(newSP.join("")); 
     }
-    console.log
-
 }
 
-drawStairs(16); 
+drawStairs(3); 
 
 
 module.exports = drawStairs;
