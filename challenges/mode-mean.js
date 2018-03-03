@@ -32,7 +32,7 @@ function modemean(array) {
     }
   }
 
-// Mean sectio 
+// Mean section
   var sum = 0;
   for (var j = 0; j < array.length; j++) {
     sum = sum + array[j];
