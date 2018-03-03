@@ -20,5 +20,4 @@ function drawStairs(n) {
     }
     return str;
 }
-console.log(drawStairs(6));
 module.exports = drawStairs;
