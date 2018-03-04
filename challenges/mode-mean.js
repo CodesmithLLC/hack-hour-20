@@ -28,8 +28,8 @@ function modemean(array) {
   
   return Math.floor(array.reduce((acc, cur) => {
     return acc + cur;
-  })/2) === theModeKey;
+  })/array.length) === theModeKey;
 }
- 
+
 
 module.exports = modemean;
