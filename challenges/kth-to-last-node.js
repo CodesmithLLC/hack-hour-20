@@ -19,18 +19,18 @@ function kthToLastNode(k, head) {
   for(let i = 0 ; i < count-k;i++){
     head = head.next;
   }
-  return head;
+  return k>count ? undefined: head.value ;
 }
 
-//  const a = new Node('A');
-//  const b = new Node('B');
-//  const c = new Node('C');
-//  const d = new Node('D');
-//  const e = new Node('E');
-//  a.next = b;
-//  b.next = c;
-//  c.next = d;
-//  d.next = e;
-//  console.log(kthToLastNode(2, a));
+ const a = new Node('A');
+ const b = new Node('B');
+ const c = new Node('C');
+ const d = new Node('D');
+ const e = new Node('E');
+ a.next = b;
+ b.next = c;
+ c.next = d;
+ d.next = e;
+ console.log(kthToLastNode(6, a));
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
