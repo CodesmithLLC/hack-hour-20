@@ -22,7 +22,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-  if (k === 0) {
+  if (k <= 0) {
     return;
   }
   let curNode = head;
