@@ -29,7 +29,7 @@ while(curr != null){
   curr = curr.next;
 }
 if(newArr.length < k){
-  return "Out of bounds";
+  return;
 }
 return newArr[newArr.length - k];
 }
