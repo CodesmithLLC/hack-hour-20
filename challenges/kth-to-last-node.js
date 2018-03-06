@@ -22,7 +22,28 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  let nthCurr = head;
+  if(k <= 0 || !head) return undefined;
 
+  for(let i = 0; i < k+1; i++) {
+    nthCurr = nthCurr.next;
+    if(!nthCurr) {
+      return undefined;
+    }
+  }
+  return nthCurr.value;
 }
+
+const a = new Node('A');
+const b = new Node('B');
+const c = new Node('C');
+const d = new Node('D');
+const e = new Node('E');
+a.next = b;
+b.next = c;
+c.next = d;
+d.next = e;
+const result = kthToLastNode(2, a); //-> returns 'D' (the value on the second to last node)
+console.log(result);
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
