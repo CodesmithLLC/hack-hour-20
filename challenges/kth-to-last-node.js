@@ -22,8 +22,8 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-  if (k === 0) {
-    return 'please input a number greater than zero'
+  if (k <= 0) {
+    return;
   }
   let curNode = head;
   let totalLength = 0;
@@ -33,7 +33,7 @@ function kthToLastNode(k, head) {
   }
   totalLength++;
   if (k > totalLength) {
-    return 'your input number is greater than the list size'
+    return;
   }
     curNode = head;
     let count = 0;
