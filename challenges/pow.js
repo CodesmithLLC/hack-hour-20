@@ -12,17 +12,10 @@ function pow(base, power) {
             negPower = true;
             power = Math.abs(power);
         }
-        if (power === 1) {
-            if (negPower) {
-                return 1/base;
-            }
-            return base;
-        } else {
-            if (negPower) {
-                return 1/base * pow(base, -(power-1));
-            }
-            return base * pow(base, power-1);
+        if (negPower) {
+            return 1 / base * pow(base, -(power - 1));
         }
+        return base * pow(base, power - 1);
     }
 }
 
