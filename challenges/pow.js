@@ -3,12 +3,11 @@
  */
 
 function pow(base, power) {
-  var total = 0
-  var oldBase = base
-  var num = 0
-  if(num === power) {return total}
-    total *= base
-    pow(total, num++)
-}
+  let total = 1
+  if(power < 1) return base
+  if(power === 0) return total
+    total = total*base
+    console.log(total, power)
+    pow(total, power-1)
 
 module.exports = pow;
