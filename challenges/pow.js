@@ -2,13 +2,7 @@
  * Use recursion!
  */
 
-function pow(base, power, total = 1) {
-    if(power === 1){
-        return base;
-    }else{ 
-        total = pow(base,power-1,total);
-        return total*base;
-    } 
+function pow(base, power) {
+    return power === 0 ? 1: base*pow(base,power-1);
 }
-console.log(pow(5,10));
 module.exports = pow;
