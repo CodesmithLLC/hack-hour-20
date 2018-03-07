@@ -33,7 +33,8 @@ function kthToLastNode(k, head) {
     tail = tail.back;
   }
   let NthNodeFromTail = tail;
-  console.log('this is our Tail', NthNodeFromTail);
+  if (NthNodeFromTail === undefined) return undefined;
+  return NthNodeFromTail;
 }
 
 
