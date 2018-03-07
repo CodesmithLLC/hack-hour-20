@@ -3,17 +3,6 @@
  */
 
 function pow(base, power) {
-    // if(power === 1){
-    //     return base;
-    // }else{ 
-    //     total = pow(base,power-1,total);
-    //     return total*base;
-    // }
-    let total = 1;
-    for(let i =0 ;i<power;i++){
-        total*=base;
-    } 
-    return total;
+    return power === 0 ? 1: base*pow(base,power-1);
 }
-console.log(pow(2,10));
 module.exports = pow;
