@@ -22,21 +22,19 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-  if (this.head === null) {
+  let tempArr = [];
+  if (head === null) {
     return undefined;
   } else  {
-    let curr = this.head;
-    let prev = 0;
-    
+    let curr = head;
     while (curr.next) {
       curr = curr.next;
-    
+      tempArr.push(curr.value); 
+      
     }
-    if (!curr.next) {
-      
-      
-    }   
+   return tempArr[tempArr.length-k];
   }
+}
 
   //I need to work on this more in my lunch hour or tonight!I got a late start on it (my fault - I spaced out 
 //on the fact that it wasn't going to be posted but we had to go and get it.)
