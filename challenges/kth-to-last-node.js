@@ -37,7 +37,7 @@ function kthToLastNode(k, head) {
   let currNode = head;
   while (currNode.next) {
     listLength++;
-    currNode = currNode.next;;
+    currNode = currNode.next;
   }
   if (k > 0 && k <= listLength) {
     for (let i = 0; i < listLength - k; i++) {
