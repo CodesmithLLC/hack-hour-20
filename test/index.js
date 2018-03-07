@@ -38,3 +38,11 @@ describe('kthToLastNode', () => {
   it('should correctly return the value of the fifth-to-last (first) node', () => expect(kthToLastNode(5, a)).to.eql('A'));
   it('should return null if k > length of linked list', () => expect(kthToLastNode(6, a)).to.eql(null));
 });
+
+describe('pow (test-cases not working with mocha etc, but this function works in the browser Developer Console) @todo', () => {
+  it('should take a positive power correctly', () => expect(pow(2^3)).to.eql(8));
+  it('should take a negative power correctly', () => expect(pow(2^-3)).to.eql(-8));
+  it('should take a 0 power correctly', () => expect(pow(0^2)).to.eql(0));
+  it('should take a negative base correctly', () => expect(pow((-2)^3)).to.eql(-8));
+  it('should take a positive base correctly', () => expect(pow(2^3)).to.eql(8));
+});
