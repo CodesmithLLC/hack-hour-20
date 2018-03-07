@@ -29,7 +29,7 @@ function drawStairs (n) {
 
 
 
-drawStairs(4)
+drawStairs(2)
 drawStairs(5)
 drawStairs(8)
 module.exports = drawStairs;
