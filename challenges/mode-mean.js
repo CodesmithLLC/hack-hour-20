@@ -22,12 +22,12 @@ function modemean(array) {
       return acc;
     }
   },{})
-  for(keys in obj){
-    if(obj[keys] >= mode){
-      mode = obj[keys]; 
+  for(var keys in obj){
+    if(obj[keys] > mode){
+      mode = keys; 
     }
   }
-  return mode === mean;
+  return mode == mean;
 }
 
 module.exports = modemean;
