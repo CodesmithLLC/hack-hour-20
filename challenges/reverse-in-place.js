@@ -8,13 +8,18 @@
  * such as Python and Javascript, strings are immutable, meaning they cannot
  * be changed after they're created.
  *
- * Since strings are immutable in javascript, we will be reversing an array of characters instead.
+ * Since strings are immutable in javascript, we will be reversing an array of 
+ * characters instead.
  *
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
 function reverseInPlace(array) {
-
+    let len = array.length;
+    for (i = 0; i < len; i++) {
+        array.splice(i, 0, array.pop());
+    }
+    return array;
 }
 
 module.exports = reverseInPlace;
