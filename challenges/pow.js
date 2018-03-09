@@ -3,14 +3,14 @@
  */
 
 //loop version
-// function pow(base, power) {
-//     let result = base; 
-//     power = power - 1; 
-//     for(let i = 0; i < power; i++){
-//         result *= base; 
-//     }
-//     return result; 
-// }
+function pow(base, power) {
+    let result = base; 
+    power = power - 1; 
+    for(let i = 0; i < power; i++){
+        result *= base; 
+    }
+    return result; 
+}
 
 
 //recursive version
@@ -21,5 +21,5 @@ function pow(base, power, accum = base) {
     return pow(base, power-1, accum)
 }
 
-console.log(pow(3,4)); //-->27
+console.log(pow(3,3)); //-->27
 module.exports = pow;
