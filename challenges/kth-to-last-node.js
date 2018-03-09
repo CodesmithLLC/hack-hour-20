@@ -22,17 +22,22 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-  let result = []
-  while(head){
-    result.push(head.value)
-    head = head.next
+  let firstPointer = head;
+  let secondPointer = head;
+
+  while(k > 0){
+    firstPointer = firstPointer.next;
+    k--;
+    console.log(firstPointer.value)
+    if(firstPointer === null){
+      return undefined;
+    }
   }
-  console.log(result)
-  result = result.reverse()
-  if(k > result.length){
-    throw "error"
+  while(firstPointer){
+    firstPointer = firstPointer.next;
+    secondPointer = secondPointer.next;
   }
-  return result[k-1]
+  return secondPointer.value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
