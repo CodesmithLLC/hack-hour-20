@@ -46,3 +46,14 @@ describe('pow (test-cases not working with mocha etc, but this function works in
   it('should take a negative base correctly', () => expect(pow((-2)^3)).to.eql(-8));
   it('should take a positive base correctly', () => expect(pow(2^3)).to.eql(8));
 });
+
+describe('reverse-in-place', () => {
+  it('non-collection: null', () => expect(reverseInPlace(null)).to.eql(null));
+  it('non-mutable collection: string literal', () => expect(reverseInPlace('abc')).to.eql('abc'));
+  it('empty array', () => expect(reverseInPlace([])).to.eql([]));
+  it('one element', () => expect(reverseInPlace([1])).to.eql([1]));
+  it('two elements', () => expect(reverseInPlace([1, 2])).to.eql([2, 1]));
+  it('three elements', () => expect(reverseInPlace([1, 2, 3])).to.eql([3, 2, 1]));
+  it('four elements', () => expect(reverseInPlace([1, 2, 3, 4])).to.eql([4, 3, 2, 1]));
+  it('five elements', () => expect(reverseInPlace([1, 2, 3, 4, 5])).to.eql([5, 4, 3, 2, 1]));
+});
