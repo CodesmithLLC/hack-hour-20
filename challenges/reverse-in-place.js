@@ -21,7 +21,5 @@ function reverseInPlace(array) {
     }
     return array;
 }
-console.log(reverseInPlace(['Hi',"my","name","is","Esther","Kim"]));
-
 
 module.exports = reverseInPlace;
