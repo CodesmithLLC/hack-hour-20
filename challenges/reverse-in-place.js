@@ -25,6 +25,14 @@ function reverseInPlace(array) {
   //^can't use that since map() creates a new array
 }
 
+//ES6 Destructing assignment (changing arrays in place)
+//for(let i = 0 f = array.length -1; i < f; i++, f--) {
+//   [array[i], array[f]] = [array[f], array[i]];
+// }
+// return array
+// }
+
+
 console.log(reverseInPlace([1, 2, 3, 4]));
 
 module.exports = reverseInPlace;
