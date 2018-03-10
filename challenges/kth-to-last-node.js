@@ -28,16 +28,21 @@ function kthToLastNode(k, head) {
   while(k > 0){
     firstPointer = firstPointer.next;
     k--;
-    console.log(firstPointer.value)
     if(firstPointer === null){
       return undefined;
     }
   }
   while(firstPointer){
+    console.log(secondPointer.value)
     firstPointer = firstPointer.next;
     secondPointer = secondPointer.next;
+    
+  }
+  if(secondPointer === null){
+    return undefined;
   }
   return secondPointer.value;
 }
+
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
