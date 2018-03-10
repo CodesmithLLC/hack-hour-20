@@ -26,7 +26,7 @@ function stringRotation(s1, s2) {
         }
       }
     }
-    if(s2Check.includes(s1)) return true
+    return s2Check.includes(s1) ? true : false
   }
 
 
