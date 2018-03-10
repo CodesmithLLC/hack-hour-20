@@ -3,9 +3,11 @@
  */
 
 function pow(base, power) {
-    if (power === 0) return 1;
-    return base * pow(base, power -1);
-}
+    if (Number.isInteger(power)) {
+     return  power === 0 ? 1: base * pow(base, Math.abs(power) -1);
+    }
+    return 'Power must be an integer'
+  }
 
 
 module.exports = pow;
