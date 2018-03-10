@@ -12,11 +12,15 @@
  */
 
 function isSubstring(s1, s2) {
+  console.log(s1.indexOf(s2))
   return s1.indexOf(s2) >= 0;
 }
 
 function stringRotation(s1, s2) {
-
+  s1 += s1;
+  return (isSubstring(s1, s2));
 }
+
+console.log(stringRotation("hello", "llohe"));
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};

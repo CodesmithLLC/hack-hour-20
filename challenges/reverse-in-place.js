@@ -17,7 +17,6 @@ function reverseInPlace(array) {
     let tmp;
     for (let i = 0; i < Math.floor(array.length / 2); i++) {
         if (array[i] !== array[array.length - 1 - i]) {
-            console.log(`comparing ${array[i]} and ${array[array.length - 1 - i]}`)
             tmp = array[i];
             array[i] = array[array.length - 1 - i];
             array[array.length - 1 - i] = tmp;
