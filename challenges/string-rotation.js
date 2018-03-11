@@ -16,12 +16,10 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-  
   let concatString = s1.concat(s1);
-  return isSubstring(concatString, s2);
-  
-  
+  return isSubstring(concatString, s2);  
 }
+
 console.log(stringRotation('hello', 'he'))
 
 
