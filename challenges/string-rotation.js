@@ -20,8 +20,5 @@ function stringRotation(s1, s2) {
   return isSubstring(concatString, s2);  
 }
 
-console.log(stringRotation('hello', 'he'))
-
-
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
