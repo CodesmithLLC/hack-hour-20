@@ -22,11 +22,11 @@ function kthToLastNode(k, head) {
   return k>count ? undefined: head.value ;
 }
 
- const a = new Node('A');
- const b = new Node('B');
- const c = new Node('C');
- const d = new Node('D');
- const e = new Node('E');
+const a = new Node('A');
+const b = new Node('B');
+const c = new Node('C');
+const d = new Node('D');
+const e = new Node('E');
  a.next = b;
  b.next = c;
  c.next = d;
