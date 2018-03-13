@@ -25,15 +25,22 @@
  */
 
 function balancedParens(input){
-  var left = 0
-  var right = 0
- var array = input.split('')
- for(var i = 0; i < input.length; i++) {
-   if(input[i] === '(') left++;
-   else if (input[i] === ')') right++;
+  var leftP = 0
+  var rightP = 0
+  var leftB = 0
+  var rightB = 0
+  var leftCB = 0
+  var rightCB = 0
+  var array = input.split('')
+   for(var i = 0; i < input.length; i++) {
+    if(input[i] === '(') leftP++;
+    else if (input[i] === ')') rightP++;
+    else if (input[i] === '[') leftB ++;
+    else if (input[i] === ']') rightB++;
+    else if (input[i] === '{') leftCB++;
+    else if (input[i] === '}') rightCB++;
  }
- return (left===right)
- console.log(array)
+ return ((leftP===rightP) && (leftB===rightB) && (leftCB===rightCB))
 }
 
 module.exports = balancedParens;
