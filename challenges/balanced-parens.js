@@ -25,7 +25,47 @@
  */
 
 function balancedParens(input){
+    let target;
+   for (let i = 0; i < input.length; i++) {
+       if (target !== undefined) {
+           if (input[i] === '(' || input[i] === '{' || input[i] === '[') {
+               inner(input[i]);
+               continue;
+           }
+           if (input[i] !== '(' || input[i] !== '{' || input[i] !== '[' || input[i] !== ']' || input[i] !== ')' || input[i] !== '}') {
+            console.log(input[i], 'not a paran')
+            continue;
+        }
+           console.log(input[i] ,'input');
+           console.log(target, 'target')
+           if (input[i] === target){
+               target = undefined;
+               continue;
+           } else {
+               return false;
+           }
+       }
 
+  function inner (input) {  
+    if (input === '(')  {
+        target = ')';
+        
+    } 
+
+    if (input === '[') {
+        target = ']'
+    
+    }
+    if (input === '{') {
+        target = '}'
+    }
+}   
+inner(input[i]);
+    }
+    console.log('hello')
+   return false;
 }
+
+console.log(balancedParens(' var hubble = function() { telescopes.awesome();'));
 
 module.exports = balancedParens;
