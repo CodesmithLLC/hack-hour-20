@@ -24,8 +24,23 @@
  *
  */
 
-function balancedParens(input){
-
-}
+const balancedParens = (s) => { // no, use recursion. Doesn't work / need to keep track of how many lefts/rights also
+  if (!s) return true;
+  const open = [];
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (c.match(/[([{]/g)) {
+      open.push(c);
+    } else if (c.match(/[)}\]]/g)) {
+      const d = open.pop();
+      if (d === '(' && c !== ')') return false;
+      if (d === '{' && c !== '}') return false;
+      if (d === '[' && c !== ']') return false;
+      if (d === undefined) return false;
+    }
+  }
+  if (open.length > 0) return false;
+  return true;
+};
 
 module.exports = balancedParens;

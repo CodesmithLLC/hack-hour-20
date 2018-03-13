@@ -5,6 +5,7 @@
     "no-plusplus": 0,
     "no-tabs": 0,
     "eol-last": 0,
-    "indent": 0
+    "indent": 0,
+    "no-undef": 0
   }
 }
