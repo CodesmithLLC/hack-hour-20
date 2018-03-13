@@ -57,3 +57,24 @@ describe('reverse-in-place', () => {
   it('four elements', () => expect(reverseInPlace([1, 2, 3, 4])).to.eql([4, 3, 2, 1]));
   it('five elements', () => expect(reverseInPlace([1, 2, 3, 4, 5])).to.eql([5, 4, 3, 2, 1]));
 });
+
+describe('balanced-parens', () => {
+  it('non-collection: null', () => expect(balancedParens(null)).to.eql(true));
+  it('empty string', () => expect(balancedParens('')).to.eql(true));
+  it('one element', () => expect(balancedParens('(')).to.eql(false));
+  it('one element', () => expect(balancedParens('a')).to.eql(true));
+  it('two elements', () => expect(balancedParens('abcd')).to.eql(true));
+  it('three elements', () => expect(balancedParens('(){}')).to.eql(true));
+  it('four elements', () => expect(balancedParens('(())')).to.eql(true));
+  it('five elements', () => expect(balancedParens('())')).to.eql(false));
+
+  it('pass their test cases', () => expect(balancedParens('(')).to.eql(false)); // false
+  it('pass their test cases', () => expect(balancedParens('()')).to.eql(true)); // true
+  it('pass their test cases', () => expect(balancedParens(')(')).to.eql(false)); // false
+  it('pass their test cases', () => expect(balancedParens('(())')).to.eql(true)); // true
+  it('pass their test cases', () => expect(balancedParens('[](){}')).to.eql(true)); // true
+  it('pass their test cases', () => expect(balancedParens('[({})]')).to.eql(true)); // true
+  it('pass their test cases', () => expect(balancedParens('[(]{)}')).to.eql(false)); // false
+  it('pass their test cases', () => expect(balancedParens(' var wow  = { yo: thisIsAwesome() }')).to.eql(true)); // true
+  it('pass their test cases', () => expect(balancedParens(' var hubble = function() { telescopes.awesome();')).to.eql(false)); // false
+});
