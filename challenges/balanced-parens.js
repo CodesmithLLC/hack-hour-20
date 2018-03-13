@@ -13,8 +13,8 @@
  *
  * Example:
  *  balancedParens('[](){}'); // true
- *  balancedParens('[({})]');   // true
- *  balancedParens('[(]{)}'); // false
+ *  balancedParens('[({})]');   // true 
+ *  balancedParens('[(]{)}'); // false +2 +1 -2 + 3 -1 -3
  *
  * Step 3:
  * ignore non-bracket characters
@@ -25,7 +25,28 @@
  */
 
 function balancedParens(input){
-
+let stringArr = input.split('');
+let bracketObj = {'(': 1, ')': -1, '[': 2, ']' : -2, '{' : 3, '}': -3};
+let bracketCount = 0;
+for(let i = 0; i < stringArr.length; i++){
+    if(bracketObj.hasOwnProperty(stringArr[i])){
+        bracketCount += bracketObj[stringArr[i]];
+    }
+    if(bracketCount < 0){
+        bracketCount += -20; //making it super negative to force a false;
+    }
+}
+if(bracketCount !== 0){
+    return false;
+}else{
+    return true;
+}
 }
 
 module.exports = balancedParens;
+console.log(balancedParens('[(]{)}'));  // false
+console.log(balancedParens('()')); // true
+console.log(balancedParens(')('));  // false
+console.log(balancedParens('(())'));  // true
+console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
+console.log(balancedParens(' var hubble = function() { telescopes.awesome();')); // false
