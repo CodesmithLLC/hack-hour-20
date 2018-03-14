@@ -79,7 +79,7 @@ function balancedParens (s, i = 0) {
 
 
   }
-  return true;
+  return !s.length;
 
 }
 
