@@ -17,62 +17,64 @@
  * 
  */
 
+
+
 function romanNumeral(n) {
-  let returnString = "";
-  while(n>1000){
-    returnString += "M";
-    n = n-1000;
+    let returnString = "";
+    while(n>=1000){
+      returnString += "M";
+      n = n-1000;
+    }
+    while(n>=900){
+      returnString += "CM";
+      n = n-900;
+    }
+    while(n>=500){
+      returnString += "D";
+      n = n-500;
+    }
+    while(n>=400){
+      returnString += "CD";
+      n = n-400;
+    }
+    while(n>=100){
+      returnString += "C";
+      n = n-100;
+    }
+    while(n>=90){
+      returnString += "XC";
+      n = n-90;
+    }
+    while(n>=50){
+      returnString += "L";
+      n = n-50;
+    }
+    while(n>=40){
+      returnString += "XL";
+      n = n-40;
+    }
+    while(n>=10){
+      returnString += "X";
+      n = n-10;
+    }
+    while(n>=9){
+      returnString += "IX";
+      n = n-9;
+    }
+    while(n>=5){
+      returnString += "V";
+      n = n-5;
+    }
+    while(n>=4){
+      returnString += "IV";
+      n = n-4;
+    }
+    while(n >=1){
+      returnString += "I";
+      n = n-1;
+    }
+    return returnString
   }
-  while(n>900){
-    returnString += "CM";
-    n = n-900;
-  }
-  while(n>500){
-    returnString += "D";
-    n = n-500;
-  }
-  while(n>400){
-    returnString += "CD";
-    n = n-400;
-  }
-  while(n>100){
-    returnString += "C";
-    n = n-100;
-  }
-  while(n>90){
-    returnString += "XC";
-    n = n-90;
-  }
-  while(n>50){
-    returnString += "L";
-    n = n-50;
-  }
-  while(n>40){
-    returnString += "XL";
-    n = n-40;
-  }
-  while(n>10){
-    returnString += "X";
-    n = n-10;
-  }
-  while(n>9){
-    returnString += "IX";
-    n = n-9;
-  }
-  while(n>5){
-    returnString += "V";
-    n = n-5;
-  }
-  while(n>4){
-    returnString += "IV";
-    n = n-4;
-  }
-  while(n >=1){
-    returnString += "I";
-    n = n-1;
-  }
-  return returnString
-}
 
 
 module.exports = romanNumeral;
