@@ -33,7 +33,6 @@ function balancedParens(input){
                continue;
            }
            if (input[i] !== '(' || input[i] !== '{' || input[i] !== '[' || input[i] !== ']' || input[i] !== ')' || input[i] !== '}') {
-            console.log(input[i], 'not a paran')
             continue;
         }
            console.log(input[i] ,'input');
@@ -62,7 +61,6 @@ function balancedParens(input){
 }   
 inner(input[i]);
     }
-    console.log('hello')
    return false;
 }
 

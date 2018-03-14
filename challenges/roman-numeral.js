@@ -17,8 +17,20 @@
  * 
  */
 
-function romanNumeral(n) {
+function romanNumeral(number) {
+    let divideBy = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+    let romanNumeral = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+    let resultString = '';
 
+    for (let i = 0; i < romanNumeral.length; i++) {
+        while ( number%divideBy[i] < number){
+            resultString = resultString + romanNumeral[i];
+            number = number - divideBy[i]
+        }
+    }
+    return resultString;
 }
+
+console.log(romanNumeral(100));
 
 module.exports = romanNumeral;
