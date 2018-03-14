@@ -44,3 +44,17 @@ return false;
 console.log( balancedParens('{}'));
 
 module.exports = balancedParens;
+
+//hack-hour: used with stack
+//go through each bracket character
+//the first one will go out last
+//the first then next should be the pairs of brackets
+//made a key with obj value and key/pair value as the characters
+//new array with value of empty array
+//use for loop
+//give char value of input[i]
+//if(char in matches) then push to the new array
+//else if char is any of the brackets -->
+//matches[brackets.pop()] is not the char
+//return false
+//
