@@ -18,24 +18,16 @@
  */
 
 function romanNumeral(n) {
-    const roman = { 1000 : 'M', 500 : 'D', 100 : 'C', 50 : 'L', 10 : 'X', 5 : 'V', 1 : 'I' };
-    const arr = { M : 0 , D : 0, C : 0 , L : 0, X : 0, V : 0, I : 0};
+    const roman = { 1000 : 'M', 500 : 'D', 400: 'CD', 100 : 'C', 90: 'XC', 50 : 'L', 40: 'XL', 10 : 'X', 9: 'IX', 5 : 'V', 1 : 'I' };
+    let result = '';
     Object.keys(roman).reverse().forEach((num) => {
         num = parseInt(num);
-        if(n/num!==0){
-            arr[roman[num]] = ((n/num).toFixed(0));
+        if(n>=num){
+            result += roman[num].repeat(Math.floor(n/num));
             n = n % num;
-        }
-    });
-    let result = '';
-    Object.keys(arr).forEach((el) => {
-        if(arr[el] !== 0) {
-            for(let i = 0 ; i< arr[el] ; i++){
-                result += el
-            }
         }
     });
     return result;
 }
-console.log(romanNumeral(1141));
+console.log(romanNumeral(449));
 module.exports = romanNumeral
