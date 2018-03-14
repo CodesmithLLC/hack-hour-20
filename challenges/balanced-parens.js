@@ -5,7 +5,7 @@
  * Example:
  *   balancedParens('(');  // false
  *   balancedParens('()'); // true
- *   balancedParens(')(');  // false
+ *   balancedParens(')(');  // false`
  *   balancedParens('(())');  // true
  *
  * Step 2:
@@ -62,13 +62,4 @@ function balancedParens(input){
     // }
 }
 
-console.log(balancedParens('[](){}')); // true
-console.log(balancedParens('[({})]'));   // true
-console.log(balancedParens('[(]{)}'));
-console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
-console.log(balancedParens(' var hubble = function() { telescopes.awesome();'));
-console.log(balancedParens('('));  // false
-console.log(balancedParens('()')); // true
-console.log(balancedParens(')('));  // false
-console.log(balancedParens('(())'));
 module.exports = balancedParens;
