@@ -78,3 +78,10 @@ describe('balanced-parens', () => {
   it('pass their test cases', () => expect(balancedParens(' var wow  = { yo: thisIsAwesome() }')).to.eql(true)); // true
   it('pass their test cases', () => expect(balancedParens(' var hubble = function() { telescopes.awesome();')).to.eql(false)); // false
 });
+
+describe('subset-sum', () => {
+  it('pass their test cases', () => expect(subsetSum([3, 7, 4, 2], 5)).to.eql(true)); // - > true, 3 + 2 = 5
+  it('pass their test cases', () => expect(subsetSum([3, 34, 4, 12, 5, 12], 32)).to.eql(true)); // -> true, 3 + 12 + 5 + 12 = 32
+  it('pass their test cases', () => expect(subsetSum([8, 2, 4, 12], 13)).to.eql(false)); // -> false
+  it('pass their test cases', () => expect(subsetSum([8, -2, 1, -3], 6)).to.eql(true)); // -> true, 8 + 1 + (-3) = 6
+});
