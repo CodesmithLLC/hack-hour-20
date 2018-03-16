@@ -17,8 +17,32 @@
  * 
  */
 
-function romanNumeral(n) {
+const bases = (n) => {
+  switch (n) {
+    case 1:
+      return 'I';
+    case 5:
+      return 'V';
+    case 10:
+      return 'X';
+    case 50:
+      return 'L';
+    case 100:
+      return 'C';
+    case 500:
+      return 'D';
+    case 1000:
+      return 'M';
+    default:
+      return 'err'
+  }
+  return 'err';
+};
 
-}
+const romanNumeral = (n) => {
+  for (let i = 1; i < n % 10; i *= 10) {
+    const d = n % i; 
+  }
+};
 
 module.exports = romanNumeral;
