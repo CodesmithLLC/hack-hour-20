@@ -25,6 +25,7 @@
  */
 
 function balancedParens(input){
+<<<<<<< HEAD
 //input is string -- output is boolean
 let stack = [];
 let open = {'{': '}', '[':']', '(': ')'};
@@ -40,6 +41,8 @@ for (let i = 0; i < input.length; i++) {
     }
 }
 return stack.length === 0;
+=======
+>>>>>>> 3e28fefa6b1e821fc5aeb9d5f057a6548c5dc1db
 
 }
 
