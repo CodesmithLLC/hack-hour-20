@@ -31,4 +31,4 @@ function decToBin(num) {
     }
     return bin.join('');
 }
-module.exports = binToDec;
+module.exports = binToDec, decToBin;
