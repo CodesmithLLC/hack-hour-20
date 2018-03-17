@@ -85,3 +85,18 @@ describe('subset-sum', () => {
   it('pass their test cases', () => expect(subsetSum([8, 2, 4, 12], 13)).to.eql(false)); // -> false
   it('pass their test cases', () => expect(subsetSum([8, -2, 1, -3], 6)).to.eql(true)); // -> true, 8 + 1 + (-3) = 6
 });
+
+describe('binary-to-dec', () => {
+  it('pass their test cases', () => expect(binToDec('0')).to.eql(0)); //   -> 0
+  it('pass their test cases', () => expect(binToDec('11')).to.eql(3)); //  -> 3
+  it('pass their test cases', () => expect(binToDec('100')).to.eql(4)); // -> 4
+  it('pass their test cases', () => expect(binToDec('101')).to.eql(5)); // -> 5
+  it('pass their test cases', () => expect(binToDec('0101')).to.eql(5)); // -> 5
+});
+
+describe('dec-to-bin', () => {
+  it('pass their test cases', () => expect(decToBin('0')).to.eql('0')); //   -> 0
+  it('pass their test cases', () => expect(decToBin('3')).to.eql('11')); //  -> 3
+  it('pass their test cases', () => expect(decToBin('4')).to.eql('100')); // -> 4
+  it('pass their test cases', () => expect(decToBin('5')).to.eql('101')); // -> 5
+});
