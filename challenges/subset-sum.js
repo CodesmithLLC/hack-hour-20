@@ -12,19 +12,14 @@ function subsetSum(array, target) {
     let newArr = array.sort(function(a,b){
         return a - b    });
     let result = 0;
-    console.log(newArr)
 
     for (let i = 0; i < array.length; i++){
         for (let j = i + 1; j < array.length; j++){
-            console.log('the result',result);
             if (result === 0) {
                 result = newArr[i] + newArr[j];
             }
             if ( (result + newArr[i] + newArr[j]) < target){
-                console.log('the coombinations', newArr[i], newArr[j]);
-
                 result = result + newArr[i] + newArr[j];
-                console.log('the result changed', result + newArr[i] + newArr[j] );
                 continue;
             } else if ((result + newArr[i] + newArr[j] ) === target) {
                 return true;
@@ -34,6 +29,5 @@ function subsetSum(array, target) {
     }
 
 }
-console.log(subsetSum([3, 34, 4, 12, 5, 12], 32));
 
 module.exports = subsetSum;
