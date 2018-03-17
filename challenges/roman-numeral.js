@@ -18,7 +18,7 @@
  */
 
 function romanNumeral(n) {
-    const roman = { 1000 : 'M', 500 : 'D', 400: 'CD', 100 : 'C', 90: 'XC', 50 : 'L', 40: 'XL', 10 : 'X', 9: 'IX', 5 : 'V', 1 : 'I' };
+    const roman = { 1000 : 'M',900: 'CM', 500 : 'D', 400: 'CD', 100 : 'C', 90: 'XC', 50 : 'L', 40: 'XL', 10 : 'X', 9: 'IX', 5 : 'V', 4 : 'IV', 1 : 'I' };
     let result = '';
     Object.keys(roman).reverse().forEach((num) => {
         num = parseInt(num);
@@ -29,5 +29,5 @@ function romanNumeral(n) {
     });
     return result;
 }
-console.log(romanNumeral(449));
+console.log(romanNumeral(999));
 module.exports = romanNumeral
