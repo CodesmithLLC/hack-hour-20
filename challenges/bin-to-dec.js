@@ -16,20 +16,16 @@
 
 function binToDec(binary) {
     if (typeof binary !== 'string') return 'invalid input';
-    if (binary === '0') return 0;
-  //   let arr = binary.slice(0);
     let decNum = 0;
-    let power = 0;
-    for (let i = binary.length-1; i > 0; i--) {
-      console.log("binary at i", binary[i])
-      if (binary[i] === '1') {
-        var add = Math.pow(2,power)
-        console.log("DN", decNum);
-        decNum += add
+    let leg = binary.length
+    for (let i = 0; i < binary.length; i++) {
+      let num = parseInt(binary[i]);
+      console.log(num);
+      if (num === 1) {
+        decNum += Math.pow(2,leg-1)
         console.log("DN", decNum);
       }
-      power++;   
-      console.log("power", power)
+      leg--;   
     }
     return decNum
   }
