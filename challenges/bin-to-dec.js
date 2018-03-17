@@ -14,7 +14,12 @@
  */
 
 function binToDec(binary) {
-
+//split the binary string
+//the base of binary is 2
+let binaryNum = parseInt(binary, 2);
+return binaryNum;
 }
+
+console.log(binToDec('101'));
 
 module.exports = binToDec;
