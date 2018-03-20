@@ -20,6 +20,7 @@ function binToDec(binary) {
     }
     return total;
 }
+
 function decToBin(num) {
     const bin = [];
     let temp = num;
