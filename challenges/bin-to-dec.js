@@ -20,6 +20,7 @@ function binToDec(binary) {
     }
     return total;
 }
+
 function decToBin(num) {
     const bin = [];
     let temp = num;
@@ -27,11 +28,8 @@ function decToBin(num) {
         if ( num >= Math.pow(2, i)){
             bin.push(Math.floor(temp/Math.pow(2,i)));
             temp = temp % Math.pow(2,i);
-        } else if (num === 0 ){
-            bin.push(0);
-            break;
         }
     }
     return bin.join('');
 }
-module.exports = binToDec;
+module.exports = binToDec, decToBin;
