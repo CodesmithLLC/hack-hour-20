@@ -11,7 +11,28 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+    if(str.length <= 1){
+        return true;
+    }
+    let strArr = str.split('');
+    let stackArr = [];
+    let newWord = false;
+    for(let i = 0; i < strArr.length; i++){
+        if(strArr[i].match(/[a-zA-Z]/i)) {
+            if(newWord) {
+                if(strArr[i].toUpperCase() === stackArr[stackArr.length-1]) {
+                    stackArr.pop();
+                }else{
+                    newWord = false; 
+                }
+            } else {
+                stackArr.push(strArr[i].toUpperCase());
+            }
+        } else if(stackArr.length > 1) {
+            newWord = true;
+        }
+    }
+    return stackArr.length === 0;
 }
 
 module.exports = matchWord;
