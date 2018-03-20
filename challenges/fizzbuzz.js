@@ -20,12 +20,14 @@ const fizzbuzz = num => {
   if (typeof num !== 'number') return "invalid input";
   const arr = [];
   for (let i = 1; i < num+1; i++) {
-    let f = i % 3 === 0, b = i % 5 === 0)
+    let f = i % 3 === 0, b = i % 5 === 0
       f? b? arr.push('fizzbuzz') : arr.push('fizz') : b? arr.push('buzz') : arr.push(i);
   };
   return arr;
 };
 
+console.log(fizzbuzz(10));
+console.log(fizzbuzz(20));
 /*
 const fizzbuzz = num => {
   if (typeof num !== 'number') return "invalid input";
