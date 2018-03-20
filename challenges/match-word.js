@@ -10,8 +10,28 @@
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
-function matchWord(str) {
+//iterate through the string from both ends
+//only consider the characters that are letters
+//if characters are letters compare front word to back (reversed) word
+//if words don't match then save front word and compare with next front word
 
+function matchWord(str) {
+    let arrOfLetters = [];
+
+    for (let i = 0; i < str.length; i++){
+        if ((/[a-zA-Z]/).test(str[i])){
+            arrOfLetters.push(str[i]);
+        }
+    }
+
+    for (let i = 0, j = str.length-1; i < str.length, j <= 0; i++, j--){
+        if (arrOfLetters[i] !== arrOfLetters[j]) {
+            return false;
+        }
+    }
+    return true;
 }
+
+
 
 module.exports = matchWord;
