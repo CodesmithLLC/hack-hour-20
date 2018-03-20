@@ -9,5 +9,5 @@ function pow(base, power) {
     total = total*base
     console.log(total, power)
     pow(total, power-1)
-
+}
 module.exports = pow;
