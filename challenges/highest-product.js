@@ -6,11 +6,9 @@
 // once found iterate again to find highest pruduct of previous result.
 
 function highestProduct(array) {
-    if (array.length<3) return 0;
-    if (!Array.isArray(array)) return 0;
-
     let productOfTwo;
     let productOfThree;
+    if (Array.isArray(array) && array.length >2){ 
      for (let i = 0; i < array.length; i++){
          for ( let j = i + 1; j < array.length; j++){
              if (!productOfTwo) {
@@ -22,7 +20,6 @@ function highestProduct(array) {
              }
          }
      }
-console.log(productOfTwo)
      for (let k = 0; k < array.length; k++){
         if (!productOfThree) {
             productOfThree = productOfTwo * array[k] 
@@ -33,6 +30,8 @@ console.log(productOfTwo)
          }
      }
      return productOfThree;
+    } else {
+        return 0;
+    }
 }
-console.log(highestProduct([-1,-3,-4,-2]))
 module.exports = highestProduct;
