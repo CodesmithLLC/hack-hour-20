@@ -22,7 +22,22 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-
+//count # of '.next', subtract from length?
+//iterate over linked list
+//if this.next === null, count back? obj.entries and count back?
+  //still have ref to this
+  var array = []
+  var filledArr = array.push(a)
+  var length = 0
+    for(var i = 0; i < filledArr.length; i++) {
+      if(filledArr[i][next] === 'Node') {
+        array.push(filledArr[i][next])
+        length++
+      }
+      return filledArr[length][value]
+    }
+  var revArr = filledArr.reverse()
+    return revArr[k][value]
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

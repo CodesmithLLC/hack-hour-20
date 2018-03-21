@@ -14,11 +14,19 @@
  *      500   ->    D
  *      900   ->    CM
  *      1000  ->    M
- * 
+ *
  */
 
 function romanNumeral(n) {
-
+  var romanReturn = ''
+  function whereToStart() {
+  var romanArr = [[I,1], [V,5], [X,10], [L,50]]
+    for(var i = 0; i < romanArr.length; i++) {
+    if((romanArr[i][1] - romanArr[i-1][1]) < romanArr[i-1][1]) {
+      romanReturn +=
+      }
+    }
+  }
 }
 
 module.exports = romanNumeral;
