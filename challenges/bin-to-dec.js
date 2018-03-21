@@ -14,7 +14,11 @@
  */
 
 function binToDec(binary) {
-
+  binary.split('').reduce((total, curr, i) => {
+    if (curr === 1) {
+      
+    }
+  })
 }
 
 module.exports = binToDec;

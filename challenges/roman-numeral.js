@@ -14,11 +14,21 @@
  *      500   ->    D
  *      900   ->    CM
  *      1000  ->    M
- * 
+ *
  */
 
-function romanNumeral(n) {
+function romanNumeral(n, string = '') {
+  const values = [1000, 500, 100, 50, 10, 5, 1];
+  const romans = ['M', 'D', 'C', 'L', 'X', 'V', 'I'];
+  values.reduce((total, val, i) {
+    while (total >= val) {
+      string += romans[i];
+      total -= val;
+    }
+    return total;
+  }, n)
 
 }
+console.log(romanNumeral)
 
 module.exports = romanNumeral;

@@ -16,13 +16,35 @@
  * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
  */
 
+
+
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
+
 function kthToLastNode(k, head) {
+  var current = head, i = 1, foundNode;
+  let length = 0;
+  while (current) {
+    length++;
+    current = current.next;
+  }
+  current = head;
+  while (current) {
+
+
+
+  }
 
 }
 
+var list = { data: 1, next: {
+                            data: 2, next: {
+                                             data: 3, next: {
+                                               data: 4, next: null }}}}
+
+
+console.log(kthToLastNode(3, list))
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
