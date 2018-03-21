@@ -3,15 +3,13 @@
 //takes a string and returns true if every word is closed by its backwards counterpart. Words must be separated by space or 
 //punctuation.
 
-
-
 function matchWord(str) {
 	if (str === '' ) return true;
 	str = str.replace(/\s/g,'');
 	let matched = str.match(/\B\w[^a-zA-Z0-9]+\w/g);
 	return matched.map(w=> w.charAt(0).toLowerCase() == w.charAt(w.length-1).toLowerCase() ? true : false)[0];
-
 }
+
 // console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw'));
 // console.log(matchWord('__ENDDNE__'));  //-> false       (not separated by a space)
 // console.log(matchWord('__END_DNE-----'));  //-> true
