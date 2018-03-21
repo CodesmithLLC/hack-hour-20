@@ -3,21 +3,20 @@
  */
 
 function highestProduct(array) {
+    let newArray = [];
+    let result;
     if(array.length < 3 || !Array.isArray(array)){ 
         return 0;
     }
-    let newArray = [];
     array.sort((a,b)=> a<b);
     newArray.push(array.shift());
     newArray.push(array.shift());
     newArray.push(array.shift());
-    let result = newArray.reduce((acc,curr)=>{
-      console.log(acc);
+    result = newArray.reduce((acc,curr)=>{
         return acc * curr;
-    },1)
+    },1);
     return result;
 }
-
 
 
 
