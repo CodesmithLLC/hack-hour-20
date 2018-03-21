@@ -10,8 +10,29 @@
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
-function matchWord(str) {
-
-}
+const matchWord = str => {
+  const words = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].match(/[a-z]/gi)) {
+      words.push([str[i], i])
+    }
+  }
+  for (let j = 0; j < words.length; j++) {
+    if (words[j][0] !== words[words.length - (j + 1)][0] || words[j][1] === words[words.length - (j + 1)][1] + 1) {
+    return false
+    }
+  }
+  return true;
+};
 
 module.exports = matchWord;
+
+// function matchWord(str) {
+//     var newStr = str.toLowerCase().replace(/[^a-zA-Z]+/g, '');
+//     for (let i = 0; i < newStr.length / 2; i++) {
+//         if (newStr[i] !== newStr[newStr.length -(i+1]) return false;
+//     }
+//     return true;
+// }
+
+
