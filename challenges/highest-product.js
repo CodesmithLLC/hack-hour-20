@@ -4,14 +4,26 @@
 
 function highestProduct(array) {
 	if(Array.isArray(array) && array.length >= 3){
-		array = array.map(num => Math.abs(num)).sort((a,b) => {return a - b;}).slice(-3);
-		return array.reduce((a,b) => {
-			return a*b;
-		})
+		let highest = [];
+		let count = 0;
+		array = array.sort((a,b) => {return a-b;});
+		console.log(array);
+		if (array[0] < 0 && array[1] < 0) {
+			if ( Math.abs(array[0]) >= array[array.length-1] && Math.abs(array[1]) >= array[array.length-3] || Math.abs(array[0] >= array[array.length-2] && Math.abs(array[1]) >= array[array.length-3])) {
+				highest.push(array[0]);
+				highest.push(array[1]);
+				highest.push(array[array.length-1]);
+			} else {	
+				highest = array.slice(-3);
+			}
+		} else {
+			highest = array.slice(-3);
+		}
+		return highest.reduce((a,b) => {return a*b;});
 	} else {
 		return 0;
 	}
 
 }
-console.log(highestProduct([-3,-6,-6,-7,-1,1,23,5,3,1,2,4]));
+
 module.exports = highestProduct;
