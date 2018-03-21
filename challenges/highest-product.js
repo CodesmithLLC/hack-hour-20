@@ -18,7 +18,7 @@ function highestProduct(array) {
       negArr.push(array[h]);
     }
   }
-  if (posCount >= 3) {
+  if (posCount >= 3 || array.length === 3) {
   for (let i = 0; i < array.length; i++) {
     for (let j = i + 1; j < array.length; j++) {
       let curProd = array[i] * array[j];
