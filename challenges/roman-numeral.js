@@ -44,5 +44,5 @@ function romanNumeral(n) {
     }
     return result;
 }
-console.log(romanNumeral(2018));
+console.log(romanNumeral(450));
 module.exports = romanNumeral;

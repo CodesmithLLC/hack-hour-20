@@ -9,15 +9,40 @@
  */
 
 function subsetSum(array, target) {
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length; j++) { 
-            if (arr[i] + arr[j] == target) {
-                return true;
-            }
+    let myArr = [];
+    return createSubset(myArr, array);
+}
+
+function createSubset(curr, set) {
+    console.log('curr', curr);
+    let result = [];
+    curr = curr.concat(curr);
+    console.log(curr);
+    for (let i = 0; i < set.length; i++) {
+        let subset = [];
+        subset.push(set[i]);
+        curr.push(subset);
+    }
+
+    result.push(curr);
+    console.log('after everything, curr = ', curr);
+    let i = 0;
+    for (let i = 0; i < set.length; i++) {
+        console.log(i);
+        for (var j = i+1; j < set.length; j++) {
+            console.log('curr ', curr[i]);
+            let result = curr[i].concat(curr[i]);
+            console.log(result);
+            curr.push(result);
         }
     }
-    return false;
+    return curr;
 }
+
+console.log(subsetSum([1, 2, 3, 4], 5));
+// console.log(subsetSum([3, 34, 4, 12, 5, 12], 32));
+// console.log(subsetSum([8, 2, 4, 12], 13));
+// console.log(subsetSum([8, -2, 1, -3], 6));
 
 
 module.exports = subsetSum;
