@@ -7,6 +7,8 @@
 
 function highestProduct(array) {
     let productOfTwo;
+    let spliceOne;
+    let SpliceTwo;
     let productOfThree;
     if (Array.isArray(array) && array.length >2){ 
      for (let i = 0; i < array.length; i++){
@@ -17,9 +19,14 @@ function highestProduct(array) {
              }
              if ((array[i]* array[j]) > productOfTwo){
                 productOfTwo = (array[i]* array[j]);
+                spliceOne = i;
+                SpliceTwo = j;
              }
          }
      }
+     console.log(SpliceTwo)
+     array.splice(spliceOne,1);
+     console.log(array,'the array')
      for (let k = 0; k < array.length; k++){
         if (!productOfThree) {
             productOfThree = productOfTwo * array[k] 
@@ -34,4 +41,5 @@ function highestProduct(array) {
         return 0;
     }
 }
+console.log(highestProduct([-1,-5,-4,-6]))
 module.exports = highestProduct;
