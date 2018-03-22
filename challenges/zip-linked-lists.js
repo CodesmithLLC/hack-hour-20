@@ -11,10 +11,12 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if (!l1) return l2;
+  if (!l2) return l1;
   let result = l1;
   let alt = l2;
   let hold;
-  while (result.next) {
+  while (alt.next) {
     hold = result.next;
     result.next = alt;
     alt = hold;
