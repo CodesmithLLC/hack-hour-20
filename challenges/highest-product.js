@@ -9,7 +9,7 @@ function highestProduct(array) {
 		array = array.sort((a,b) => {return a-b;});
 		console.log(array);
 		if (array[0] < 0 && array[1] < 0) {
-			if ( Math.abs(array[0]) >= array[array.length-1] && Math.abs(array[1]) >= array[array.length-3] || Math.abs(array[0]) >= array[array.length-2] && Math.abs(array[1]) >= array[array.length-3]) {
+			if(array[0]*array[1]*array[array.length-1] > array.slice(-3).reduce((a,b) => a*b)){
 				highest.push(array[0]);
 				highest.push(array[1]);
 				highest.push(array[array.length-1]);
