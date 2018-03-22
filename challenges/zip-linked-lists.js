@@ -11,18 +11,20 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-	
-	let zipped = [];
-	while(l1.head.next !== null || l2.head.next !== null){
-		zipped.push(l1.head);
-		zipped.push(l2.head);
-		l1.head = l1.head.next;
-		l2.head = l2.head.next;
+	if([...arguments].length===1){
+		return l1;
 	}
-	if(l1.head.next !== null){
-		zipped.push(l1.head);
-	} else if ( l2.head.next !== null) {
-		zipped.push(l2.head);
+	let zipped = [];
+	while(l1.next !== null || l2.next !== null){
+		zipped.push(l1);
+		zipped.push(l2);
+		l1 = l1.next;
+		l2 = l2.next;
+	}
+	if(l1.next !== null){
+		zipped.push(l1);
+	} else if (l2.next !== null) {
+		zipped.push(l2);
 	}
 	for( let i = 0; i< zipped.length-1; i++) {
 		zipped[i].next = zipped[i+1];
