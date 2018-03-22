@@ -30,7 +30,7 @@ function zip(l1, l2) {
     curNode.next = addNode;
     curNode = addNode;
     addNode = curNodeTemp;
-  return head.next;
+  return head;
 };
 
 module.exports = {Node: Node, zip: zip};
