@@ -22,9 +22,9 @@ function zip(l1, l2) {
 		l2 = l2.next;
 	}
 	if(l1.next !== null){
-		zipped.push(l1);
+		zipped.push(l1.next);
 	} else if (l2.next !== null) {
-		zipped.push(l2);
+		zipped.push(l2.next);
 	}
 	for( let i = 0; i< zipped.length-1; i++) {
 		zipped[i].next = zipped[i+1];
