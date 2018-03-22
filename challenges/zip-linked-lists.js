@@ -16,7 +16,7 @@ function zip(l1, l2) {
   let result = l1;
   let alt = l2;
   let hold;
-  while (result.next) {
+  while (alt.next) {
     hold = result.next;
     result.next = alt;
     alt = hold;
