@@ -11,6 +11,12 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if (l2 === undefined) {
+    return l1;
+  }
+  if (l1 === undefined) {
+    return l2;
+  }
   let head = l1;
   let curNode = head;
   let addNode = l2;
@@ -24,7 +30,7 @@ function zip(l1, l2) {
     curNode.next = addNode;
     curNode = addNode;
     addNode = curNodeTemp;
-  return head;
+  return head.next;
 };
 
 module.exports = {Node: Node, zip: zip};
