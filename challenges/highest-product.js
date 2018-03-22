@@ -11,19 +11,9 @@ function highestProduct(array) {
   }
   //Can only take two negative numbers if they are greater than the positive integers
   let newArr = array.sort((a,b) => a - b);
-  let negArr = [];
-  for(let i = 0; i < newArr.length; i++){
-    if(newArr[i] < 0){
-     negArr.push(Math.abs(newArr[i]));
-    }
-  }
-  if(negArr.length < 2){
-    return  Math.abs(newArr[newArr.length-1] * newArr[newArr.length-2] * newArr[newArr.length-3]);
-  }else{
-    if(negArr[0] > newArr[newArr.length-1]){
-      return Math.abs(newArr[newArr.length-1] * negArr[0] * negArr[1]); 
-    }
-  }
+  const lastThree = newArr.slice(-3).reduce((a,b) => a * b);
+  const otherThree = [...newArr.slice(0,2),...newArr.slice(-1)].reduce((a,b) => a * b);
+  return Math.max(lastThree,otherThree);
 }
 
 
