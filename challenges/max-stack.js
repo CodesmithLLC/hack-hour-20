@@ -27,6 +27,9 @@ class Stack {
     if (this.length == 0) this.max = undefined;
     return result;
   }
+  getMax() {
+    return this.max;
+  }
 }
 
 let myStack = new Stack();
