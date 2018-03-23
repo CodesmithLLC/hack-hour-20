@@ -33,9 +33,19 @@ Stack.prototype.pop = function() {
 };
 
 Stack.prototype.getMax = function() {
+	if(this.leng === 0){
+		return;
+	}
 	return this.max;
 };
-
-
-
+// let arr = new Stack();
+// console.log(arr.push(15));
+// console.log(arr.push(15));
+// console.log(arr.push(15));
+// console.log(arr.pop());
+// console.log(arr.getMax());
+// console.log(arr.pop());
+// console.log(arr.pop());
+// console.log(arr.getMax());
+// console.log(arr);
 module.exports = Stack;
