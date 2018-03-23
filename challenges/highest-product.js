@@ -6,13 +6,13 @@
 
 function highestProduct (arr, end = arr.length - 1) {
   if (!Array.isArray(arr) || arr.length < 3) return 0
-  const sorted = arr.sort();
+  const sorted = arr.sort((a, b) => a - b);
   return Math.max(sorted[0] * sorted[1] * sorted[end], sorted[end - 2] * sorted[end - 1] * sorted[end]);
 }
 
 function highestProduct2 (arr) {
   if (!Array.isArray(arr) || arr.length < 3) return 0
-  const sorted = arr.sort();
+  const sorted = arr.sort((a, b) => a - b);
   const end = arr.length - 1;
   // first two NEGATIVE numbers, and highest POSTIVE number
   let case1 = sorted[0] * sorted[1] * sorted[end];
