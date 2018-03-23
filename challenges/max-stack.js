@@ -17,12 +17,14 @@ function Stack() {
     }
   }
   function pop() {
+    if(array.length === 0) return 0
     for(var i = 0; i < array.length; i++) {
       var lastPos = array.length-1[i]
       delete array.length-1[i]
       return lastPos
   }
   function getMax() {
+    if(array.length === 0) return 0
     var sorted = array.sort(function(x,y) {
       return x-y
     })
