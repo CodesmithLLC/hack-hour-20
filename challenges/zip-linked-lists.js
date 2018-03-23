@@ -11,6 +11,7 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+<<<<<<< HEAD
   let node1 = l1;
   let node2 = l2;
   let placeholder;
@@ -22,6 +23,8 @@ function zip(l1, l2) {
     node2 = l2.next;
   }
   return node1
+=======
+>>>>>>> 6167edf081f242251e17a74959e914c56afd15b7
 };
 
 module.exports = {Node: Node, zip: zip};
