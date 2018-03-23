@@ -3,11 +3,11 @@
  */
 
 function highestProduct(array) {
-  if(array.length < 3)  undefined;  
-  if (array.every((elem) => typeof(elem) !== 'number')) undefined;
-  array = array.sort();
-  console.log(array.sort);
-  console.log('hackkkkker', array.pop(),array.pop(),array.pop())
+  if(array.length < 3)  0;  
+  if (array.every((elem) => typeof(elem) !== 'number')) 0;
+  array = array.sort(); // sort all of the numbers in the array
+  //console.log('dsdslkmds',array.sort()); //check to see if sort is working 
+  //console.log('hackkkkker', array.pop(),array.pop(),array.pop())
   return array.pop() * array.pop() * array.pop();
   }
 
