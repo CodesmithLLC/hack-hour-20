@@ -14,6 +14,7 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
+  if (!head || !head.next) return 'Cannot reverse'; 
   let currNode = head; 
   let prevNode; 
   let nextNode = head.next;
@@ -24,7 +25,19 @@ function reverseLinkedList(head) {
     currNode.next = prevNode;
   }
   nextNode.next = currNode;
+  head.next = null;
   return nextNode;
 }
+
+let node1 = new Node(1);
+let node2 = new Node(2);
+node1.next = node2;
+let node3 = new Node(3);
+node2.next = node3;
+let node4 = new Node(4);
+node3.next = node4;
+
+console.log(reverseLinkedList(node1))
+
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
