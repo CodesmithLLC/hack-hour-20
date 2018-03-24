@@ -28,11 +28,13 @@ function reverseLinkedList(head) {
   curr = result;
 
     while (curr) {
-      curr.next = stack.pop();
+      curr.next = at.pop();
       curr = curr.next;
     }
 
   return result;
 }
+
+
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
