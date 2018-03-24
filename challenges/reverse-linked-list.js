@@ -20,11 +20,13 @@ function reverseLinkedList(head) {
         array.push(node.value);
         node = node.next;
     }
-    let result = new Node(array.pop())
-    let resultPointer = result.next;
+    let result = new Node(array.shift())
+    let resultPointer = result;
+    let newNode;
     while(array.length > 0){
-        resultPointer = new Node(array.pop());
-        resultPointer = resultPointer.next;
+          newNode = new Node(array.shift());
+          newNode.next = result
+          result = newNode
     }
     return result;
 }
