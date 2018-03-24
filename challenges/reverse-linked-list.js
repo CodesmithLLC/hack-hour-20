@@ -9,12 +9,30 @@
  */
 
 function Node(value) {
-    this.value = value;
-    this.next = null;
+  this.value = value;
+  this.next = null;
 }
 
 function reverseLinkedList(head) {
+  if(!this.head) return undefined;
 
+  const curr = head.value;
+  const at = [];
+
+    while(curr) {
+      at.push(curr);
+      curr = curr.next;
+    }
+
+  let result;
+  curr = result;
+
+    while (curr) {
+      curr.next = stack.pop();
+      curr = curr.next;
+    }
+
+  return result;
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
