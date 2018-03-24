@@ -28,7 +28,8 @@ function reverseLinkedList(head) {
           newNode.next = result
           result = newNode
     }
-    return result;
+    head = result;
+    return head;
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
