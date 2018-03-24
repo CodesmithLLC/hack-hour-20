@@ -7,7 +7,6 @@
  */
 
 function Stack() {
-<<<<<<< HEAD
   this.storage = {}
   this.index = 0;
   
@@ -41,9 +40,3 @@ Stack.prototype.getMax = function() {
 
 module.exports = Stack;
 
-=======
-  // body...
-}
-
-module.exports = Stack;
->>>>>>> 2852ccb339c48cfdb5c1c7d18d6bc402356ce46c
