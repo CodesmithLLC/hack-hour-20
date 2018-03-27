@@ -25,6 +25,7 @@
  */
 
 function balancedParens(input){
+  var input =
   var leftP = 0
   var rightP = 0
   var leftB = 0
