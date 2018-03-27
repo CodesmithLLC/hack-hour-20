@@ -12,20 +12,26 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
-    if (!Array.isArray(stock_prices_yesterday)) return 0;
-    stock_prices_yesterday.sort((a, b) => {
-        return a-b;
-    });
-    let res = stock_prices_yesterday[stock_prices_yesterday.length-1] - stock_prices_yesterday[0];
-    if (typeof res !== "number" || isNaN(res) || res <= 0) {
-        return 0;
+function bestProfit(arr) {
+    let max = 0;
+    let maxI = 0;
+    let min = 0;
+    let minI = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max && maxI < i) {
+            max = arr[i];
+            maxI = i;
+        }
+        else if (arr[i] < min && i < maxI && minI < i) {
+            min = arr[i];
+            minI = i;
+        }
     }
-    return res;
+    return (arr[maxI] - arr[minI]);
 }
-let myArr = [10, 20, 30, 40, 20, 10, 40, 30, 20, 10];
+let myArr = [10, 20, 30, 40, 20, 330, 40, 5]
 console.log(bestProfit(myArr));
-console.log(bestProfit(10));
-console.log(bestProfit(['hello', 'bye']));
+// console.log(bestProfit(10));
+// console.log(bestProfit(['hello', 'bye']));
 
 module.exports = bestProfit;
