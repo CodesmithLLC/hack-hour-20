@@ -34,5 +34,4 @@ function bestProfit(prices) {
 	}
 	return profits.reduce((a,b) =>  a > b ? a : b )
 }
-console.log(bestProfit([]))
 module.exports = bestProfit;
