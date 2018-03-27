@@ -13,6 +13,7 @@
  */
 
 function bestProfit(arr) {
+    if (!Array.isArray(arr)) return 0;
     let max = 0;
     let maxI = 0;
     let min = 0;
@@ -26,12 +27,16 @@ function bestProfit(arr) {
             min = arr[i];
             minI = i;
         }
+        // console.log('min', min, 'max', max)
     }
-    return (arr[maxI] - arr[minI]);
+    let result = (arr[maxI] - arr[minI]);
+    if (result < 0) return 0;
+    return result;
 }
-let myArr = [10, 20, 30, 40, 20, 330, 40, 5]
-console.log(bestProfit(myArr));
-// console.log(bestProfit(10));
+// let myArr = [10, 20, 30, 40, 20, 330, 40, 5]
+console.log(bestProfit([10, 20, 30, 40, 20, 330, 40, 5]));
+console.log(bestProfit([0, 10, 0, 0, 0, 0, 0, 0]));
+console.log(bestProfit([10, 5, 0, 0, 0, 0, 0, 0]));
 // console.log(bestProfit(['hello', 'bye']));
 
 module.exports = bestProfit;
