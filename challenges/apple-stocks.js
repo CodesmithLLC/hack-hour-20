@@ -16,15 +16,15 @@ function bestProfit(stock_prices_yesterday) {
     if(Array.isArray(stock_prices_yesterday === false) || typeof stock_prices_yesterday[0] !== "number"){
         return 0;
     }
-    let highest = Math.max(...stock_prices_yesterday);
-    let lowest = Math.min(...stock_prices_yesterday);
-    
-    if(highest > lowest){
-        return highest - lowest;
-    } else {
-        return 0;
+    let highest = 0;
+    for(let i = 0; i < stock_prices_yesterday.length; i++){
+      for(let j = i; j < stock_prices_yesterday.length; j++){
+        if(array[j] - array[i] > highest){
+            highest = array[j] - array[i]
+        }
+      }
     }
-
+    return highest;
 }
 
 module.exports = bestProfit;
