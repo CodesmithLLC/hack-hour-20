@@ -13,7 +13,15 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+//if no profit or input is invalid
+//return 0
+  if(!stock_prices_yesterday || stock_prices_yesterday === 0) return 0
 
+  stock_prices_yesterday.forEach((el, i) => {
+    return difference = el[i-1] - el[i];
+  });
 }
+
+
 
 module.exports = bestProfit;
