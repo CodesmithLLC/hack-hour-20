@@ -12,15 +12,17 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {  
-    if(!Array.isArray(stock_prices_yesterday)) return 0
-    if(stock_prices_yesterday.length < 2) return 0
-    const moneyMaker = 0
-    const highest = (Math.max(...stock_prices_yesterday))
-    const newArr = stock_prices_yesterday.slice(stock_prices_yesterday.indexOf(highest))
-    const lowest = (Math.min(...newArr))
-    console.log('highest', highest, 'newArr', newArr, 'lowest', lowest)
-    return highest - lowest
+function bestProfit(stock_prices_yesterday) {
+  if(!Array.isArray(stock_prices_yesterday)) return 0
+  if(stock_prices_yesterday.length < 2) return 0
+  const moneyMaker = 0
+  const lowest = (Math.min(...stock_prices_yesterday))
+  console.log(stock_prices_yesterday.indexOf(lowest))
+  const newArr = (stock_prices_yesterday.slice(stock_prices_yesterday.indexOf(lowest)))
+  console.log(newArr)
+  const highest = (Math.max(...newArr))
+//console.log('highest', highest, 'lowest', lowest)
+  return highest - lowest
 }
 
 module.exports = bestProfit;
