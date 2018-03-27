@@ -13,12 +13,16 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-    if(Array.isArray(stock_prices_yesterday === false) || typeof stock_prices_yesterday[0] !== "number"){
+    if(Array.isArray(stock_prices_yesterday) === false){
         return 0;
     }
     let highest = 0;
     for(let i = 0; i < stock_prices_yesterday.length; i++){
       for(let j = i; j < stock_prices_yesterday.length; j++){
+        if(typeof stock_prices_yesterday[j] !== "number")
+        {
+          return 0;
+        }
         if(stock_prices_yesterday[j] - stock_prices_yesterday[i] > highest){
             highest = stock_prices_yesterday[j] - stock_prices_yesterday[i]
         }
