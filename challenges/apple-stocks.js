@@ -13,7 +13,15 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+	let min = stock_prices_yesterday[0];
+	let max = 0;
+	if(!Array.isArray(stock_prices_yesterday)) return 0;
+	stock_prices_yesterday.slice(1).forEach((price,i) => {
+		if (typeof price !== 'number') return 0; 
+		price < min ? min = price : min = min;
+		price > max ? max = price: max = max;
+	})
+	return max < min ? 0 : max-min;
 }
-
+console.log(bestProfit([1,2,3,4,5,6,7,8,9,100000,10,1000000]))
 module.exports = bestProfit;
