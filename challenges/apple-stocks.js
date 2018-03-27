@@ -11,9 +11,26 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
-
+  // array stock_prices_yesterday [ 100, 30, 40 70 , 400, 300]
+  // the stock prices are ordered by time in minute increments from 9:30am
+  // to get the the best profit we must compute the diffrence form a purchase and sale
+  //**the purchase must allow for a sale that yeilds the greatest profit
+  
+  //input: an array of numbers ordered by min. increments
+  //ouput: a number (profit from the sale)
+  //
 function bestProfit(stock_prices_yesterday) {
-
+    let highestProfit = 0;
+    for (let i = 0; i < stock_prices_yesterday.length; i++){
+        for (let j = i + 1; j < stock_prices_yesterday.length; j++){
+            let profit = (-stock_prices_yesterday[i]) + stock_prices_yesterday[j]
+            if ( profit > highestProfit) {
+                highestProfit = profit;
+            }
+        }
+    }
+    return highestProfit;
 }
+console.log(bestProfit([100,200,200, 400,140,20]));
 
 module.exports = bestProfit;
