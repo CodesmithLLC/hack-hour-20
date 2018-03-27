@@ -16,7 +16,7 @@ function bestProfit(prices) {
 	let min = prices[0];
 	let max = 0;
 	let profits = [];
-	if(!Array.isArray(prices)) return 0;
+	if(!Array.isArray(prices)||prices.length <= 1) return 0;
 	for (let i = 1; i < prices.length; i++){
 		if (typeof prices[i] !== 'number'|| prices[i] <= 0) {
 			profits = [0];
@@ -32,8 +32,7 @@ function bestProfit(prices) {
 			profits.push(max-min);
 		}
 	}
-	return profits.reduce((a,b) => { return a > b ? a : b });
+	return profits.reduce((a,b) =>  a > b ? a : b )
 }
-
-console.log(bestProfit([100,300,200,500,600,700,800,200,300,500,600]))
+console.log(bestProfit([]))
 module.exports = bestProfit;
