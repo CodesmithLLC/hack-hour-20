@@ -16,7 +16,32 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+  /////////////////
+  //My stupid way//
+  /////////////////
+  
+  startingPoint = s2.indexOf(s1[0]); 
+  // console.log({startingPoint});
+
+  for(let i = 0, f = startingPoint; i < s1.length; i++, f++){
+    if(f === s1.length){
+      f=0;
+    }
+    if(s1.charAt(i) !== s2.charAt(f)){
+      return false
+    }
+  }
+  return true
+
+  ////////////////
+  ///Better way///
+  ////////////////
+  // let compare = s1.concat(s1);
+  // return compare.includes(s2); 
+
 
 }
+
+console.log(stringRotation("hellos", "lloshe")); 
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
