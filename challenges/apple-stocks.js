@@ -23,5 +23,4 @@ function bestProfit(stock_prices_yesterday) {
 	})
 	return max < min ? 0 : max-min;
 }
-console.log(bestProfit([1,2,3,4,5,6,7,8,9,100000,10,1000000]))
 module.exports = bestProfit;
