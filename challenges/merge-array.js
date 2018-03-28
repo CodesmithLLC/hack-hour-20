@@ -14,7 +14,25 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
+    let newSortedArray = [];
+if (Array.isArray(arr1), Array.isArray(arr2)){
+    let maxLength = Math.max(arr1.length,arr2.length);
+    for (let i = 0; i < maxLength; i++){
+        if (arr1[i] && arr2[i]){
+            if (arr1[i] > arr2[i]){
+                newSortedArray.push(arr2[i], arr1[i]);
+            } else {
+                newSortedArray.push(arr1[i], arr2[i]);
+            }
+        }else if (arr1[i]){
+            newSortedArray.push(arr1[i]);
+        }else {
+            newSortedArray.push(arr2[i]);
+        }
+    }
+    return newSortedArray;
 }
+}
+console.log(mergeArrays([3,4,6,10,11,15,21],[1,5,8,12,14,19,20,22]))
 
 module.exports = mergeArrays;
