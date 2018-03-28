@@ -14,14 +14,15 @@
  */
 
 function mergeArrays(arr1, arr2) {
-  if (!arr2) {
+  if (!arr2 || arr2.length === 0) {
     return arr1;
   }
-  if (!arr1) {
+  if (arr1.length === 0) {
     return arr2;
   }
-  let add = arr1[0];
-  let next = arr2[0];
+  
+  let add1 = arr1[0];
+  let add2 = arr2[0];
   const output = [];
   let length;
   if (arr1.length > arr2.length) {
@@ -29,21 +30,34 @@ function mergeArrays(arr1, arr2) {
   } else {
     length = arr2.length
   }
-  for (let i =0; i < length ; i++) {
-    if (add > next) {
-      tempNext = next;
-      next = add;
-      add = tempNext;
+  
+  let ind1 = 0;
+  let ind2 = 0;
+  
+  for (let i = 0; i < (arr1.length + arr2.length) ; i++) {
+
+    if (add1 > add2) {
+      if (add2) {
+      output.push(add2);
+      }
+      ind2++;
+      if (arr2[ind2]) {
+      add2 = arr2[ind2];
+      } else {
+        add2 = 1000000000000;
+      }
     } else {
-      add = arr1[i];
-      next = arr2[i];
+      if (add1) {
+      output.push(add1);
+      }
+      ind1++;
+      if (arr1[ind1]) {
+      add1 = arr1[ind1];
+      } else {
+        add1 = 1000000000000;
+      }
     }
-    if (add) {
-      output.push(add);
-    }
-    if (next) {
-    output.push(next);
-    }
+
   }
   
   return output;
