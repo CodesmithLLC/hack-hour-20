@@ -26,7 +26,7 @@ function romanNumeral(n, string = '') {
       total -= val;
     }
     return total;
-  }, n)
+  }, n);
 
 }
 console.log(romanNumeral)
