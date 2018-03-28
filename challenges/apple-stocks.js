@@ -18,7 +18,7 @@ function bestProfit(prices) {
 	let profits = [];
 	if(!Array.isArray(prices)||prices.length <= 1) return 0;
 	for (let i = 1; i < prices.length; i++){
-		if (typeof prices[i] !== 'number'|| prices[i] <= 0) {
+		if (typeof prices[i] !== 'number'|| prices[i] <= 0 || typeof min !== 'number' || min <= 0) {
 			profits = [0];
 			break;
 		} 
