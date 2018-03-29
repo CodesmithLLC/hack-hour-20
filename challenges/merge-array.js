@@ -37,11 +37,11 @@ function mergeArrays2(arr1, arr2) {
             newArr.unshift(arr2[pArr2])
             pArr2 -= 1;
         } 
-        else if (pArr1 !== 0) {
+        else if (pArr1 !== -1) {
             newArr.unshift(arr1[pArr1])
             pArr1 -= 1;
         }
-        else if (pArr2 !== 0) {
+        else {
             newArr.unshift(arr2[pArr2])
             pArr2 -= 1;
         }
