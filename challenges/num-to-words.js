@@ -17,8 +17,8 @@ const threeDigit = (num) =>{
 	const threeDigit = Math.floor(num%1000/100);
 	let result = [];
 	const zeros = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
-	const ones = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Ninteen'];
-	const tens = ['','Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninty'];
+	const ones = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+	const tens = ['','Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
 	if(num === 0) return 'zero';
 	if(num % 1000 > 0) {
 		if(twoDigit === 1) result.unshift(ones[num%10]);
@@ -33,9 +33,8 @@ const threeDigit = (num) =>{
 function numToWords(num) {
 	
 	const final = [];
-	if (num / 1 % 1000) {
-		final.unshift(threeDigit(num%1000));
-	}
+	final.unshift(threeDigit(num%1000));
+	
 	if (Math.floor(num / 1000) % 1000 !== 0) {
 		final.unshift(threeDigit(Math.floor(num/1000))+'Thousand');
 	}
@@ -55,4 +54,5 @@ function numToWords(num) {
 	return final.join('');
 }
 
+console.log(numToWords(1231230));
 module.exports = numToWords;
