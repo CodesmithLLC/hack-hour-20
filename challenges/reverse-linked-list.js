@@ -40,4 +40,17 @@ node3.next = node4;
 console.log(reverseLinkedList(node1))
 
 
+function numToWords(num) {
+  let numArr = num.toString().split();
+  let word = '';
+  let obj = {'0' : 'Zero', '1': 'One', '2':'Two'}
+  for (let i = numArr.length-1; i > 0; i--) {
+    word += obj[numArr[i]
+  }
+  return word;
+}
+
+console.log(numToWords(2))
+
+
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
