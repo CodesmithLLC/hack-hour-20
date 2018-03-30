@@ -33,6 +33,5 @@ if (Array.isArray(arr1), Array.isArray(arr2)){
     return newSortedArray;
 }
 }
-console.log(mergeArrays([3,4,6,10,11,15,21],[1,5,8,12,14,19,20,22]))
 
 module.exports = mergeArrays;
