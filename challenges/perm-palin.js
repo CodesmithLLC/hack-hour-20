@@ -10,7 +10,16 @@
  */
 
 function permPalin(str) {
-	
+	const checkRepeat = {};
+	let	count = 0;
+	str = str.replace(/\s/g,'');
+	for (let i = 0 ; i < str.length ; i++ ) {
+		checkRepeat[str[i]] === undefined ? checkRepeat[str[i]] = 1 : checkRepeat[str[i]]++;
+	}
+	for(key in checkRepeat) {
+		checkRepeat[key] === 1 ? count++ : null;
+	}
+	return count <= 1;
 }
 
 module.exports = permPalin;
