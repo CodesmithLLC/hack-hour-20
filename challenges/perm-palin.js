@@ -12,7 +12,7 @@
 function permPalin(str) {
 	const checkRepeat = {};
 	let	count = 0;
-	str = str.replace(/\s/g,'');
+	str = str.replace(/\s/g,'').toLowerCase();
 	for (let i = 0 ; i < str.length ; i++ ) {
 		checkRepeat[str[i]] === undefined ? checkRepeat[str[i]] = 1 : checkRepeat[str[i]]++;
 	}
