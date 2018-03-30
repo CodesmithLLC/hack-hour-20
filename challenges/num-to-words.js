@@ -30,8 +30,16 @@ function numToWords(num) {
     if(i === newArr.length-3) {
       wordyNum.unshift(numArr[newArr[i]] + 'hundred')
     }
+    if(i === newArr.length-4) {
+      wordyNum.unshift(numArr[newArr[i]] + 'thousand')
+    }
+    if(i === newArr.length-5) {
+      wordyNum.unshift(tensArr[newArr[i]])
+    }
+    if(i === newArr.length-6) {
+      wordyNum.unshift(numArr[newArr[i]] + 'hundred')
   }
-  console.log(wordyNum.join(''));
+   return wordyNum.join('');
 }
 
 module.exports = numToWords;
