@@ -56,5 +56,3 @@ function Queue() {
 
 module.exports = {Stack: Stack, Queue: Queue};
 
-
-console.log(Stack.push(2));
