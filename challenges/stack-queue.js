@@ -5,8 +5,14 @@
 
 function Stack() {
     this.storage = [];
-    this.push = (x)=>{ this.storage.push(x)};   
-    this.pop = (x)=>{ this.storage.pop(x)}
+    this.push = (x)=>{ return this.storage.push(x)};   
+    this.pop = (x)=>{ 
+        if(this.storage.length === 0){
+            return undefined;
+        } else {
+            return this.storage.pop(x);
+        }
+    }
 }
 
 
