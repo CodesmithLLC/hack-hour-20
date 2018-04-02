@@ -44,7 +44,7 @@ function Queue() {
         this.stack2.push(addVal);
       }
       let returnVal = this.stack2.pop();
-      for (let i = 0; i < this.stack1length; i++) {
+      for (let i = 0; i < this.stack1length - 1; i++) {
         let addVal = this.stack2.pop();
         this.push(addVal);
       }
