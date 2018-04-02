@@ -20,6 +20,9 @@ function stringRotation(s1, s2) {
 
 }
 
+let x = [1 ,2 ,34 3434,56,6,3];
+x.filter(el => el % 2 == 0)
+
 
 
 

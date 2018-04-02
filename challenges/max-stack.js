@@ -16,21 +16,22 @@ function Stack () {
 
 Stack.prototype.push = function (value) {
   this.storage[this.index++] = value;
-  if (value > this.max) this.max = value;
   return this.index;
 }
 
 Stack.prototype.pop = function () {
   if (this.index > 0) {
     let last = this.storage[--this.index];
+    if (last === this.max) getMax(value);
     delete this.storage[this.index];
-    console.log(this)
     this.index--;
     return last;
   }
 }
 
-Stack.prototype.getMax = function () {
+Stack.prototype.getMax = function (value) {
+  if (value > this.max) this.max = value;
+
   return this.max;
 }
 

@@ -14,11 +14,14 @@
  */
 
 function binToDec(binary) {
-  binary.split('').reduce((total, curr, i) => {
-    if (curr === 1) {
-      
+  return binary.split('').reduce((total, curr, i) => {
+    if (curr === '1') {
+      total += Math.pow(2, binary.length - 1 - i);
     }
-  })
+    return total;
+  }, 0)
 }
+
+console.log(binToDec('100101'))
 
 module.exports = binToDec;
