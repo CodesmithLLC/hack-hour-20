@@ -14,9 +14,9 @@
 
 function numToWords(num) {
   let numberArr = [];
-const underTwenty = {19 : 'Nineteen', 18:'Eighteen', 17:'Seventeen', 16: 'Sixteen', 15: 'Fifteen', 14: 'Fourteen', 13: 'Thirteen', 12: 'Tweleve', 11: 'Eleven', 10: 'Ten', 9: 
+const underHundred = {20: 'Twenty', 30: 'Thirty', 40: "Forty", 50: 'Fifty', 60: 'Sixty', 70: 'Seventy', 80: 'Eighty', 90: 'Ninety', 19 : 'Nineteen', 18:'Eighteen', 17:'Seventeen', 16: 'Sixteen', 15: 'Fifteen', 14: 'Fourteen', 13: 'Thirteen', 12: 'Tweleve', 11: 'Eleven', 10: 'Ten', 9: 
 'Nine', 8: 'Eight', 7: 'Seven', 6: 'Six', 5: 'Five', 4: 'Four', 3: 'Three', 2: 'Two', 1: 'One', 0: 'Zero'};
-const underHundred = {30: 'Thirty', 40: "Forty", 50: 'Fifty', 60: 'Sixty', 70: 'Seventy', 80: 'Eighty', 90: 'Ninety'};
+
 if(1000 - num < 1000 && num > 100){
   let p = Math.floor(num / 100);
   numberArr.push(underTwenty[p], 'hundred');
