@@ -33,12 +33,12 @@ function Queue() {
     this.stack1length = 0;
     this.stack2 = new Stack();
     
-    this.push = function(value) {
+    this.enqueue = function(value) {
       this.stack1length = this.stack1.push(value);
       return this.stack1length;
     };
     
-    this.pop = function() {
+    this.dequeue = function() {
       for (let i = 0; i < this.stack1length; i++) {
         let addVal = this.stack1.pop();
         this.stack2.push(addVal);
@@ -46,7 +46,7 @@ function Queue() {
       let returnVal = this.stack2.pop();
       for (let i = 0; i < this.stack1length - 1; i++) {
         let addVal = this.stack2.pop();
-        this.push(addVal);
+        this.enqueue(addVal);
       }
       return returnVal;
        
