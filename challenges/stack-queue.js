@@ -4,8 +4,22 @@
 
 
 function Stack() {
-
+  this.storage = {};
+  this.count = 0;
 }
+
+Stack.prototype.push = (value) => {
+  this.stack.push(value);
+}
+
+Stack.prototype.pop = () => {
+  if(this.count === 0) {
+    return undefined;
+  }else {
+    return this.stack.pop();
+  }
+}
+
 
 
 /**
@@ -14,7 +28,15 @@ function Stack() {
 
 
 function Queue() {
+  this.pushStack = new Stack();
+  this.popStack = new Stack();
 
+  Que.prototype.enqueue = (value) => {
+    this.push.pushStack(value)
+  }
+  que.prototype.dequeue = () => {
+
+  }
 }
 
 module.exports = {Stack: Stack, Queue: Queue};
