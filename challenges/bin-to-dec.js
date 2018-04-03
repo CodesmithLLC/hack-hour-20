@@ -14,7 +14,22 @@
  */
 
 function binToDec(binary) {
-
+    let total = 0;
+    for ( let i = 0 ; i < binary.length; i++){
+        total += Math.pow(2, binary.length-1-i)*binary.charAt(i);
+    }
+    return total;
 }
 
-module.exports = binToDec;
+function decToBin(num) {
+    const bin = [];
+    let temp = num;
+    for ( let i = 16; i >= 0 ; i--) {
+        if ( num >= Math.pow(2, i)){
+            bin.push(Math.floor(temp/Math.pow(2,i)));
+            temp = temp % Math.pow(2,i);
+        }
+    }
+    return bin.join('');
+}
+module.exports = binToDec, decToBin;
