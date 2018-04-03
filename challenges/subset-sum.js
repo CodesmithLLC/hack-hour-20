@@ -9,7 +9,21 @@
  */
 
 function subsetSum(array, target) {
-
+    const combine  = [];
+    for ( let i = 0 ; i < 4; i++){
+        let temp = "";
+        for ( let j = 0 ; j < array.length; j++){
+            temp += array[j];
+            if(temp !== ""){
+                combine.push(temp);
+            }
+        }
+        
+    }
+    return combine;
 }
-
+console.log(subsetSum([1,2,3,4],4));
 module.exports = subsetSum;
+
+// a b c d ab ac ad bc bd cd abc abd acd bcd abcd 
+// [a,b,c,d]
