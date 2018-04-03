@@ -22,8 +22,9 @@ function Stack() {
 
 
 function Queue() {
+    //BLAGH!!!
     this.actualQueue = new Stack;
-    this.placeholder = new Stack;
+    this.placeholder = new Stack; 
     this.enqueue = actualQueue.push(x)
     this.dequeue = (x)=>{
         if(actualQueue.length  < 1){
@@ -38,6 +39,7 @@ function Queue() {
         }
         return result;
     }
+
 }
 
 module.exports = {Stack: Stack, Queue: Queue};
