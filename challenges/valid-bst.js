@@ -12,8 +12,31 @@ function BinaryTree(val) {
     this.right = null;
 }
 
-function validBST(tree) {
+// save a temp value of current node and compare to left and right
+// if left is less and right is more than current temp value continue
+// else return false
+//
+let example = {
+    value : 10,
+    left : {value : 9, left : { value : 8,
+        left : {value : 7, left : {},right : {}},
+        right : { value : 9, left : {}, right : {}}},right : {}},
+    right : { value : 11, left : {}, right : {}}
+};
 
+function validBST(tree) {
+    let tempCurrentNode = tree.value;
+    let left = tree.left
+    let right = tree.right
+    if (tempCurrentNode > left.value && tempCurrentNode < right.value) {
+        validBST(left);
+        validBST(right);
+    } else {
+        return false;
+    }
+    return true;
 }
+console.log(validBST(example));
+
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
