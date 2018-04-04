@@ -12,21 +12,20 @@ function BinaryTree(val) {
     this.right = null;
 }
 
-function validBST(tree) {
-  let output = true;
+function validBST(tree, output = true) {
   if (tree.left !== null) {
     if (tree.left.value > tree.value) {
       output = false;
     } else {
-      output = validBST(tree.left);
+      output = validBST(tree.left, output);
     }
   }
   
   if (tree.right !== null) {
     if (tree.right.value < tree.value) {
-      return false;
+      output = false;
     } else {
-      output = validBST(tree.right);
+      output = validBST(tree.right, output);
     }
   }
   return output;
