@@ -5,7 +5,7 @@
  * Example:
  *   balancedParens('(');  // false
  *   balancedParens('()'); // true
- *   balancedParens(')(');  // false
+ *   balancedParens(')(');  // false`
  *   balancedParens('(())');  // true
  *
  * Step 2:
@@ -23,9 +23,43 @@
  *
  *
  */
-
+function count(string){
+    let curly = 0;
+    let square = 0;
+    let paren = 0;
+    for (let i = 0 ; i < string.length; i++) {
+        if ( string.charAt(i)==='{','}') {
+            curly++;
+        } else if (string.charAt(i) === '(',')') {
+            paren++;
+        } else if (string.charAt(i) === '[',']') {
+            square++;
+        }
+    }
+    return curly % 2 === 0 && paren % 2 === 0 && square % 2 === 0
+}
 function balancedParens(input){
-
+    input = input.trim().split('').filter(el => el.match(/(\{|\}|\(|\)|\[|\])/gm)).join('');
+    if(count(input)){
+        if (input.match(/\{(\W+)\}/g)) {
+            return count(input.match(/\{(\W+)\}/g)[0]);
+        } else if (input.match(/\[(\W+)\]/g)) {
+            return count(input.match(/\[(\W+)\]/g)[0]);
+        } else if (input.match(/\((\W+)\)/g)) {
+            return count(input.match(/\((\W+)\)/g)[0]);
+        } else if(input.indexOf('{')>input.indexOf('}') || input.indexOf('[')>input.indexOf(']') || input.indexOf('(')>input.indexOf(')')) {
+            return false;
+        }
+        return true;
+    } else {
+        return false;
+    }
+    
+    // if ( input.indexOf('{') > input.indexOf('}') || input.indexOf('(') > input.indexOf(')') || input.indexOf('[') > input.indexOf(']')) {
+    //     return false;
+    // } else {
+    //     return true;
+    // }
 }
 
 module.exports = balancedParens;

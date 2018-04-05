@@ -14,7 +14,14 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
+	let result = [];
+	let merge = [...arr1,...arr2];
+	for ( let i = 0 ; i < arr1.length+arr2.length; i++) {
+		let min = Math.min(...merge);
+		result.push(min);
+		merge = [...merge.slice(0,merge.indexOf(min)),...merge.slice(merge.indexOf(min)+1)]
+	}
+	return result;
 }
 
 module.exports = mergeArrays;
