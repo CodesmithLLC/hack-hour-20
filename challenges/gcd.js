@@ -7,15 +7,17 @@
  *
  */
 
-function gcd(a, b) {
+function gcd (a, b) {
   let max = Math.max(a, b), min = Math.min(a, b);
-  let mod = max % min;
-  if (mod === 0) return min
-  else return mod;
+  return max % min === 0 ? min : mod;
+}
+
+function gcd1Liner (a, b) {
+  return Math.max(a, b) % Math.min(a, b) === 0 ? Math.min(a, b) : Math.max(a, b) % Math.min(a, b);
 }
 
 console.log(gcd(10, 8))
 console.log(gcd(8, 10))
 console.log(gcd(120, 60))
-
+console.log("mod", 2 % 10)
 module.exports = gcd;
