@@ -8,7 +8,19 @@
  */
 
 function gcd(a, b) {
-
+  var arraya = []
+  var arrayb = []
+  var joined = []
+  for(var i = 0; i <= a, i <= b; i++) {
+    if(a % i === 0) arraya.push(i)
+    if(b % i === 0) arrayb.push(i)
+  }
+  for(var x = 0; x < arraya.length; x++) {
+    if(arrayb.includes(arraya[x])) {
+      joined.push(arraya[x])
+    }
+  }
+  return Math.max(...joined)
 }
 
 module.exports = gcd;
