@@ -13,8 +13,33 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
-
+// figure out how to only iterate through half
+function reverseInPlace (arr) {
+  arr.forEach((el, i, array) => {
+    let temp = el, backIndex = arr.length - 1 - i;
+    arr[i] = arr[backIndex];
+    arr[backIndex] = el;
+  })
+  return arr;
 }
+
+function reverseInPlace2 (array) {
+  for (let front = 0; front < array.length / 2; front++) {
+    let temp = array[front], backIndex = array.length - 1 - front;
+    array[front] = array[backIndex]
+    array[backIndex] = temp;
+  }
+  return array;
+}
+
+function reverseInPlace3 (array) {
+  return array.reverse();
+}
+
+
+
+
+const arr = ['a', 'b', 'c', 'd', 'e'];
+console.log(reverseInPlace(arr))
 
 module.exports = reverseInPlace;
