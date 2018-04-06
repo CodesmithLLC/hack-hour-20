@@ -25,8 +25,19 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
 
+// var jasmine = function(name, age) {
+//          if(!age){
+//            return "We don't know how old " + name + " is!";
+//          }
+    
+//          else{
+//            return name + " is " + age + " years old!";
+//          }
+//        };
+
+function applyIt(func, args) {
+    return func.apply(null,args);
 }
 
 module.exports = applyIt;
