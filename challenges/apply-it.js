@@ -24,9 +24,13 @@
  *
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
+let addNums = (a, b) => a + b;
 
 function applyIt(func, args) {
-
+    console.log(arguments);
+    return func(...args);
 }
+
+console.log(applyIt(addNums, [1,5]));
 
 module.exports = applyIt;

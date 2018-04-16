@@ -18,24 +18,24 @@
  */
                     //90
 function romanNumeral(n) {
-    if(n<=0) return "nahhh man ..."; 
-    
-    arr = [[1, "I"], [5, "V"], [10, "X"], [50, "L"], [100, "C"], [500, "D"], [1000, "M"]]; 
-    
-
-    
-    obj = {
-        1: "I",
-        5: "V", 
-        10: "X",
-        50: "L",
-        100: "C",
-        500: "D",
-        1000: "M"
-    }
- 
-
-    
+    function romanNumeral(n) {
+        //ryans solution!!!!
+        const values = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+        const numerals = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+        let romanStr = '';
+       ​
+        values.reduce((total, value, i) => {
+         while (total >= value) {
+          romanStr += numerals[i];
+          total -= value;
+         }
+         return total;
+        }, n);
+        return romanStr;
+       }
+    // if(n<=0) return "nahhh man ...";  
+    // arr1 = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"]; 
+    // arr2 = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]; 
 
 }
 

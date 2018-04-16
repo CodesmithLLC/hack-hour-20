@@ -4,7 +4,7 @@
  *      at any given node, the value of all the nodes in its right tree must be > its value
  * Assume that each value in the tree is unique.
  */
- 
+
 
 function BinaryTree(val) {
     this.value = val;
@@ -12,7 +12,19 @@ function BinaryTree(val) {
     this.right = null;
 }
 
+let phillip = new BinaryTree(10);
+phillip.left= new BinaryTree(3);
+phillip.right= new BinaryTree(12);
+
+console.log(phillip);
 function validBST(tree) {
+
+    // if tree.left.val is < tree.val and not null
+    // &&
+    // tree.right.val is > tree.val and not null
+        //validBST(tree.left)
+        //validBST(tree.right)
+    //else return false
 
 }
 

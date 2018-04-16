@@ -13,7 +13,58 @@
  */
 
 function numToWords(num) {
+    let result = ''; 
+    let numWords = {
+        0: 'Zero',
+        1: 'One', 
+        2: 'Two', 
+        3: 'Three', 
+        4: 'Four', 
+        5: 'Five', 
+        6: 'Six', 
+        7: 'Seven', 
+        8: 'eight', 
+        9: 'Nine', 
+        10: 'Ten', 
+        11: 'Eleven', 
+        12: 'Twelve', 
+        13: 'Thirteen ', 
+        14: 'Fourteen', 
+        15: 'Fifteen ', 
+        16: 'Sixteen', 
+        17: 'Seventeen', 
+        18: 'Eighten', 
+        19: 'Nineteen', 
+    }
+
+    let places = {
+        3: 'Hundred',
+        4: 'Thousand',
+        7: 'Million'
+    }
+    
+    num = JSON.stringify(num); 
+    let numLength = num.length;
+    for(let i = 0; i < num.length; i++){
+        console.log({i})
+        console.log(num[i]); 
+        if(num.length - i <= 2){
+            console.log(typeof num.slice(-2));
+            let remainder = numWords[num.slice(-2)];
+            result += numWords[remainder]
+            return result
+        }else{
+            result += numWords[num[i]];
+            result += places[numLength]
+        }
+        numLength--;
+    }
+
+return result; 
 
 }
+
+
+console.log(numToWords(5413)); 
 
 module.exports = numToWords;
