@@ -9,13 +9,20 @@
 // countTwos(11420);  -> 4483
 
 
-function countTwos (n, twos = 0) {
-  for (let i = 0; i < n; i++) {
+function countTwos (n, i, twos = 0) {
+  for (i = 0; i < n; i++) {
     i.toString().split('').forEach((integer) => {
       if (integer === '2') twos++;
-    })
+    });
   }
-  return twos;
+  return i.toString().split('').includes('2') ? twos + 1 : twos;
+}
+
+function countTwos2 (n) {
+
+  for (let i = 0; i < n; i++) {
+
+  }
 }
 
 
