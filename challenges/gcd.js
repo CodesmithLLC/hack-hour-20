@@ -9,7 +9,7 @@
 
 function gcd (a, b) {
   let max = Math.max(a, b), min = Math.min(a, b);
-  if (max % min === 0) return min
+  if (max % min === 0) return min;
   else if (max % 2 !== 0 && min % 2 !== 0) return 1;
   else return max % min;
 }
