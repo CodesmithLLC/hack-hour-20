@@ -11,10 +11,9 @@
 
 function countTwos(num) {
     let counter = 0;
-    for(let i = 0; i < num; i++){
+    for(let i = 0; i <= num; i++){
         let string = i.toString().split('')
-        console.log(string)
-        for(let j = 0; j < string.length; j++){
+        for(let j = 0; j <= string.length; j++){
             if(string[j]=== "2"){
                 counter++
             }
@@ -22,5 +21,8 @@ function countTwos(num) {
     }    
     return counter;
 }
+
+console.log(countTwos(11420))//;  -> 4483
+
 
 module.exports = countTwos;
