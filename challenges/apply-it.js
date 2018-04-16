@@ -25,8 +25,52 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
 
+
+function applyIt(func, args) {
+	let spread = '';
+	let result = {};
+	args.forEach((arg, i) => {
+		let value = arg;
+		result[`arg${i}`] = function(){return value};
+	})
+	for(key in result) {
+		if(key !== Object.keys(result).slice(-1)[0]){
+			if(typeof result[key]() === 'string') spread += `"${result[key]()}", `;
+			else spread += `result.${key}(), `;
+		} else {
+			if(typeof result[key]() === 'string') spread += `"${result[key]()}", ` ;
+			else spread += `result.${key}()`;
+		}
+	}
+	const output = (result) => {
+		for(key in result) {
+			if(key !== Object.keys(result).slice(-1)[0]){
+				if(typeof result[key]() === 'string') spread += `"${result[key]()}", `;
+				else spread += `${result[key]}()`;
+			} else {
+				if(typeof result[key]() === 'string') spread += `"${result[key]()}", ` ;
+				else spread += `result.${key}()`;
+			}
+		}
+		return 
+	}
+
+	const apply = () => {
+		return func(eval(spread));
+	}
+	return apply;
 }
 
+var jasmine = function(name, age) {
+   if(!age){
+     return "We don't know how old " + name + " is!";
+   }
+   else{
+     return name + " is " + age + " years old!";
+   }
+ };
+ var jmoney = applyIt(jasmine, ["Jasmine", 1]);
+
+console.log(jmoney());
 module.exports = applyIt;
