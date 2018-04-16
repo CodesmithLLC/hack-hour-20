@@ -9,19 +9,21 @@
 // countTwos(11420);  -> 4483
 
 
-function countTwos(n, twos = 0) {
+function countTwos (n, twos = 0) {
   for (let i = 0; i < n; i++) {
-    if (i % 10 === 2) twos++;
+    i.toString().split('').forEach((integer) => {
+      if (integer === '2') twos++;
+    })
   }
-  return n > 100 ? twos * 10 : twos;
+  return twos;
 }
 
 
 console.log(countTwos(1)); // -> 0
 console.log(countTwos(3)); // -> 0
 console.log(countTwos(13)); // -> 0
-console.log(countTwos(1000)); // -> 0
-console.log(countTwos(11420)); // -> 0
+console.log(countTwos(1000)); // -> 300
+console.log(countTwos(11420)); // -> 4483
 
 
 
