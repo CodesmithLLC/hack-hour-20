@@ -29,7 +29,11 @@ for(var i = 0; i < arguments[0].length; i++) {
   if(arguments[i] === args[i]) {
     func.replace(/arguments/[i]/i, args[i])
   }
-}  
 }
+}
+
+//solution notes
+//can use eval(code) > harmful bc checks to see if code evals to code, or is legit JS
+//right ans -> reduce over args and add comma, eval runs in IIFE
 
 module.exports = applyIt;
