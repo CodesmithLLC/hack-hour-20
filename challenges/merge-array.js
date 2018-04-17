@@ -13,8 +13,11 @@
  *
  */
 
-function mergeArrays(arr1, arr2) {
 
+ //a little ham and eggs coming at ya!
+function mergeArrays(arr1, arr2) {
+    return Array.isArray(arr1) !== true || Array.isArray(arr2) !== true ?  0 : [...arr1, ...arr2].sort((a,b) => a - b);
 }
+
 
 module.exports = mergeArrays;
