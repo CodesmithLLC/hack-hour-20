@@ -19,5 +19,6 @@ function countTwos(num) {
 	return count;
 }
 
+console.log(countTwos(11420));
 
 module.exports = countTwos;
