@@ -17,8 +17,45 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
+//setting up lists to work with
+let list1 = new Node(2);
+list1.next = new Node(1);
+list1.next.next = new Node(5);
 
+let list2 = new Node(5);
+list2.next = new Node(9);
+list2.next.next = new Node(2);
+
+
+//super long way probably a better solution.
+function addLinkedList(l1, l2) {
+  let value1 = '',
+      value2 = '',
+      curr1 = list1,
+      curr2 = list2;
+
+//this function probably kills my time complextiy
+  let addAndReverse =  (string1, string2) => {
+    let reverse1 = string1.split('').reverse().join('');
+    let reverse2 = string2.split('').reverse().join('');
+    let foo = parseInt(reverse1) + parseInt(reverse2);
+    return foo.toString().split('').reverse().join('');
+  }
+
+  while(curr1 !== null){
+    value1 += curr1.value;
+    curr1 = curr1.next;
+  }
+
+  while(curr2 !== null){
+    value2 += curr2.value;
+    curr2 = curr2.next;
+  }
+
+
+  return parseInt(addAndReverse(value1, value2));
 }
+
+console.log(addLinkedList(list1, list2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
