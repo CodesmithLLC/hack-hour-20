@@ -13,7 +13,22 @@
  */
 
 function numToWords(num) {
-
+    let numArr = num.toString().split('');
+    console.log(numArr);
+    let word = '';
+    let obj = {
+        Ones: { '0': 'Zero', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four', '5': 'Five' },
+        Teens: {'11': 'Eleven', '12': 'Twelve', '13': 'Thirteen', '14': 'Fourteen', '15': 'Fifteen'},
+        Tens: {'2': 'Twenty', '3': 'Thirty', '4': 'Forty'}
+    };
+    for (let i = 0; i < numArr.length; i++) {
+        console.log(numArr[i])
+        word += obj[numArr[i]]
+        console.log('word', word);
+    }
+    return word;
 }
+
+console.log(numToWords(2))
 
 module.exports = numToWords;
