@@ -9,7 +9,7 @@
 const Stack = () => {
   this.count = 0;
   this.storage = {};
-  this.max = 0;
+  this.max = -Infinity;
 }
 
 Stack.prototype.push = function (value) {
@@ -24,8 +24,7 @@ Stack.prototype.pop = function () {
     return undefined;
   }
   //decrement count to grab prev value
-  this.count--;
-  const result = this.storage[this.count];
+  const result = this.storage[--this.count];
   delete this.storage[this.count];
   return result;
 }
