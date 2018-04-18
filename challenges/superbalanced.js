@@ -13,8 +13,22 @@ function BinaryTree(value) {
   this.right = null;
 }
 
+let phillip = new BinaryTree(10);
+phillip.right = new BinaryTree(15);
+phillip.left = new BinaryTree(5);
+phillip.left.left = new BinaryTree(2);
+phillip.left.right = new BinaryTree(6);
+
+
+BinaryTree.prototype.searchLevel = function (tree) {
+  
+}
+
 function superbalanced(tree) {
+  if(!tree)return false;
 
 }
+
+console.log(superbalanced(phillip));
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
