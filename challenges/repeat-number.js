@@ -11,7 +11,10 @@
  */
 
 function repeatNumbers(array) {
-
+	let result = 0;
+	array.forEach((num, i) => {
+			if(array.slice(i+1).includes(num)) result = num;
+		})
+	return result;
 }
-
 module.exports = repeatNumbers;
