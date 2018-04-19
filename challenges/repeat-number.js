@@ -11,7 +11,14 @@
  */
 
 function repeatNumbers(array) {
-
+  let obj = {};
+  for (let i = 0; i < array.length; i++) {
+    if (!obj[array[i]]) {
+      obj[array[i]] = true;
+    } else {
+      return array[i];
+    }
+  }
 }
 
 module.exports = repeatNumbers;
