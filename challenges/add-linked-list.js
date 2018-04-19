@@ -24,17 +24,16 @@ function addLinkedList(l1, l2) {
     newNum = newNum - 10;
     newTen = true;
   }
-  let newLinkedlist = new Node(newNum);
-  let linkedListPointer = newLinkedList.next;
+  let newLinkedList = new Node(newNum);
+  let linkedListPointer = newLinkedList;
   if(l1 && l2){
     l1 = l1.next;
     l2 = l2.next;
   }
 
   while(l1 && l2){
-
     let newNode = new Node(l1.value + l2.value);
-    if(newTen === true;){
+    if(newTen === true){
       newNode.value++
       newTen = false;
     }
@@ -42,10 +41,13 @@ function addLinkedList(l1, l2) {
       newNode.value = newNode.value - 10;
       newTen = true;
     }
-    linkedListPointer = newNode;
-    newNode.next = linkedListPointer;
+    console.log("newnode", newNode)
+    linkedListPointer.next = newNode;
+    newNode = linkedListPointer;
     l1 = l1.next;
     l2 = l2.next;
+    console.log("linkedListPointer", linkedListPointer)
+
   }
 
 
