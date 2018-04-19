@@ -18,11 +18,12 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
-  let currOne = l1.this.head
-  let currTwo = l2.this.head
+  let currOne = l1.this.head.value
+  let currTwo = l2.this.head.value
   let resList = new Node(currOne + currTwo)
+  currRes = resList.this.head
   while(l1.this.next != null) {
-    resList.next = (l1.this.next + l2.this.next)
+    resList.next = new Node(l1.this.next + l2.this.next)
     currOne = l1.this.next
     currTwo = l2.this.next
   }
