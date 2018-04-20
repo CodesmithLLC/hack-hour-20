@@ -16,8 +16,60 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
+const fizzbuzz = num => {
+  if (typeof num !== 'number') return "invalid input";
+  const arr = [];
+  for (let i = 1; i < num+1; i++) {
+    let f = i % 3 === 0, b = i % 5 === 0
+      f? b? arr.push('fizzbuzz') : arr.push('fizz') : b? arr.push('buzz') : arr.push(i);
+  };
+  return arr;
+};
 
+console.log(fizzbuzz(10));
+console.log(fizzbuzz(20));
+/*
+const fizzbuzz = num => {
+  if (typeof num !== 'number') return "invalid input";
+  const arr = [];
+  for (let i = 1; i < num+1; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      arr.push('fizzbuzz')
+    }
+    else if (i % 3 === 0) {
+      arr.push('fizz')
+    }
+    else if (i % 5 === 0) {
+      arr.push('buzz')
+    }
+    else {
+      arr.push(i);
+    }
+  }
+  return arr;
 }
+
+const fizzbuzz = num => {
+  if (typeof num !== 'number') return "invalid input";
+  const arr = [];
+  let i = 1;
+  while (i < num+1) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      arr.push('fizzbuzz')
+    }
+    else if (i % 3 === 0) {
+      arr.push('fizz')
+    }
+    else if (i % 5 === 0) {
+      arr.push('buzz')
+    }
+    else {
+      arr.push(i);
+    }
+    i++;
+  }
+  return arr;
+}
+*/
 
 module.exports = fizzbuzz;

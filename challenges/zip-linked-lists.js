@@ -11,6 +11,18 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if (l1) { const newNode = new Node(l1)};
+  let currNodeL1 = newNode;
+  let currNodeL2; 
+  let savedFromL1;
+  let savedFromL2;
+  while (l1.next) {
+    if (!savedFromL1) l1.next = l2.
+    if (l2.value) {
+      savedFromL1 = l1.next
+      let l1.next = l2.next
+    }
+  };
 };
 
 module.exports = {Node: Node, zip: zip};

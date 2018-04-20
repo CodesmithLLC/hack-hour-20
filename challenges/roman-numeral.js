@@ -18,7 +18,16 @@
  */
 
 function romanNumeral(n) {
+  let res = '';
+  let numLeg = n.toString().length;
+  if (numLeg === 1 & n > 5) {
 
-}
+  }
+  return res;
+} 
+
+
+
+
 
 module.exports = romanNumeral;

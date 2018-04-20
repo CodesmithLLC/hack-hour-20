@@ -8,8 +8,16 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
-function subsetSum(array, target) {
-
+function subsetSum(arr, target) {
+    let answer = false;
+    let pointer = 0;
+    let sum = 0;
+    while (pointer < arr.length || answer === false) {
+      sum+=arr[pointer]
+      answer = (sum === target)
+      pointer++
+    }
+    return answer;
 }
 
 module.exports = subsetSum;
