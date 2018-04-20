@@ -14,14 +14,11 @@ function mergeRanges(array) {
     let returnArray = [];
     array.sort((a,b)=>a[0] - b[0])
     for(let i = 0; i < array.length; i++){
-        console.log(returnArray)
         if(array[i+1]){
             if(array[i][1] >= array[i+1][0]){
-                console.log("IF")
                 returnArray.push([array[i][0],array[i+1][1] ])
             } 
         }else {
-            console.log("ELSE")
             returnArray.push(array[i])
         }
     }
