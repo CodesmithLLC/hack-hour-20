@@ -21,9 +21,9 @@ function repeatNumbers(array) {
   }
 }
 
-repeatNumbers([4,1,2,3,4]);
-// console.log(repeatNumbers([4,1,2,3,3]));
-// console.log(repeatNumbers([2,1,4,4,2]));
+// repeatNumbers([4,1,2,3,4]);
+// // console.log(repeatNumbers([4,1,2,3,3]));
+// // console.log(repeatNumbers([2,1,4,4,2]));
 
 
 module.exports = repeatNumbers;
