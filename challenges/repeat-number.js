@@ -10,6 +10,7 @@
  *
  */
 
+
 function repeatNumbers(array) {
   const newObj = {};
   for (let i = 0; i < array.length; i += 1) {
@@ -19,4 +20,14 @@ function repeatNumbers(array) {
   return undefined;
 }
 
+function repeatNumbers1(array) {
+  var result = 0;
+  
+  for (var i = 0; i < array.length; i ++) {
+    result = result ^ i ^ array[i];
+    console.log(result)
+  }
+  
+  return result;
+}
 module.exports = repeatNumbers;
