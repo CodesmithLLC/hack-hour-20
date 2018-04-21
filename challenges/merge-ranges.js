@@ -13,15 +13,6 @@
 
 
 function mergeRanges(array) {
-    let returnArray = [];
-    array.sort((a,b)=>a[0] - b[0])
-    let x = 0
-    while(array[x + 1]){
-        if(array[x][1] > array[x+1][0]){
-            let y = x+1
-            while(array[y] && array[y]0 >=)
-        }
-    }
 
 
 
