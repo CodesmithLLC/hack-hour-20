@@ -33,6 +33,9 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  if (!head) {
+    return false;
+  }
   let curNode = head;
   let curNode2 = head.next;
   while (curNode && curNode2) {
