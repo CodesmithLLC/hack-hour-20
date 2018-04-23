@@ -12,7 +12,7 @@
 
 function mergeRanges(array) {
   const result = [];
-  array = array.sort((a,b) => { return a[0] - b[0]});
+  array.sort((a,b) => { return a[0] - b[0]});
   for (let i = 0 ; i < array.length; i++) {
     if(array[i+1]) {
       if(array[i][1] <= array[i+1][1] && array[i][1] >= array[i+1][0]) {
@@ -31,5 +31,6 @@ function mergeRanges(array) {
   if(JSON.stringify(result) == JSON.stringify(array)) return array;
   return mergeRanges(result);
 }
+
 
 module.exports = mergeRanges;
