@@ -10,7 +10,15 @@
 
 
 function countTwos(num) {
-
+	let count = 0;
+	for(let i = 0; i <= num ; i++) {
+		if (i.toString().includes('2')) {
+			i.toString().split('').forEach(num => num === '2' ? count++ : null);
+		}
+	}
+	return count;
 }
+
+console.log(countTwos(11420));
 
 module.exports = countTwos;
