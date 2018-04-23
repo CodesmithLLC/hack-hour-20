@@ -16,12 +16,16 @@ function sumMultiples3Or5Below1000() {
   return sum;
 }
 
-
 // extension make it dynamic function that takes input x,y,z
 // and returns the sum of multiples of x and y below z
 function sumMultiplesXOrYBelowZ(x, y, z) {
   let sum = 0;
   let counter = 0;
+  if((x-y) < 0) {
+    counter = x
+  } else {
+    counter = y
+  }
   while(counter < z) {
     if(counter % x === 0) sum += counter
     if(counter % y === 0) sum += counter
