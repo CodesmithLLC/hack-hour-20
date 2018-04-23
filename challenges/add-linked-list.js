@@ -18,7 +18,14 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
-
+  if !(l1.value && l2.value) return 'invalid inputs'
+  let currl1 = l1.value;
+  let currl2 = l2.value;
+  let node = new Node(currl1+currl2)
+  while (l1.next && l2.next) {
+    currl1 = l1.value;
+    curr
+  }
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

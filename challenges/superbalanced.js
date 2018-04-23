@@ -14,7 +14,18 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
-
+  if (!tree.value)  return 'not valid tree'; // checks if input is a valid BST
+  if (tree === null) return true; //not sure if this is base case
+  if (tree.left && !tree.right) {
+    if (tree.left.left || tree.left.right) return false;
+    return;
+  }
+  if (tree.right && !tree.left) {
+    if (tree.right.right || tree.right.left) return false;
+    return;
+  }
+  superbalanced(tree.left);
+  superbalanced(tree.right);
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
