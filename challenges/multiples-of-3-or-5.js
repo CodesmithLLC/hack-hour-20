@@ -12,9 +12,17 @@ function sumMultiples3Or5Below1000() {
 	for (let i = 1; i < 1000; i++) {
 		if(i%3 === 0 || i%5 === 0) sum += i;
 	}
+	
   return sum;
 }
 
+// function sum(x, range) {
+// 	return (Math.floor(range/x)*x + x) * Math.floor(range/x) / 2
+// }
+
+// function LCM(x,y) {
+// 	return 
+// }
 // extension make it dynamic function that takes input x,y,z
 // and returns the sum of multiples of x and y below z
 function sumMultiplesXOrYBelowZ(x, y, z) {
