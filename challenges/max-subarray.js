@@ -13,7 +13,7 @@ function maxSubarray(arr) {
   for(let i = 0; i < arr.length; i++) {
     subMax = Math.max(0, arr[i] + subMax);
     subcurrMax = Math.max(subMax, subcurrMax)
-    //console.log(subcurrMax, subMax);
+    console.log(subcurrMax, subMax);
   }
 }
 
