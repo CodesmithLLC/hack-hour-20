@@ -14,7 +14,7 @@ function sumMultiples3Or5Below1000() {
   return sum;
 }
 
-//sumMultiples3Or5Below1000()
+console.log(sumMultiples3Or5Below1000());
 
 
 // extension make it dynamic function that takes input x,y,z
@@ -27,7 +27,7 @@ function sumMultiplesXOrYBelowZ(x, y, z) {
   return sum;
 }
 
-console.log(sumMultiplesXOrYBelowZ(3,5,10));
+///console.log(sumMultiplesXOrYBelowZ(3,5,10));
 
 const objectToExport = {
   sumMultiples3Or5Below1000,
