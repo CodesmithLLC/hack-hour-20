@@ -8,9 +8,12 @@
  */
 
 function maxSubarray(arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
   let max;
   for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length; j++) {
+    for (let j = i; j < arr.length; j++) {
       let sub = arr.slice(i, j + 1);
       let subsum = 0;
       for (let k = 0; k < sub.length; k++) {
