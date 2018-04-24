@@ -16,7 +16,19 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  if(s1.length !== s2.length){
+    return false;
+}
+return isSubstring(s1+s1,s2);
+  // let fChar = s1[0];
+  // let initial = s2.indexOf(fChar);
+  // let newS2 = s2.slice(initial) + s2.slice(0,initial);
+  // return s1 === newS2;
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
+
+console.log(stringRotation("hello", "hello")) // -> true
+console.log(stringRotation("hello", "llohe")) // -> true
+console.log(stringRotation("hello", "he"))  // -> false
+console.log(stringRotation("hello", "ollhe")) // -> false (not a rotation, just an anagram)

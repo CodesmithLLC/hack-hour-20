@@ -19,6 +19,40 @@ function Node(val) {
 
 function addLinkedList(l1, l2) {
 
+  let carryOver = 0;
+  let newList;
+  if((l1.value + l2.value) >= 10) {
+    newList = new Node((l1.value + l2.value) % 10);
+    carryOver = 1;
+  } else {
+    newList = new Node(l1.value + l2.value);
+  }
+  let head = newList;
+  while(l1.next != null && l2.next != null){
+    l1 = l1.next;
+    l2 = l2.next;
+    if((l1.value + l2.value + carryOver) >= 10) {
+      newList.next = new Node((l1.value + l2.value + carryOver) % 10);
+      carryOver = 1;
+    } else {
+      newList.next = new Node(l1.value + l2.value + carryOver);
+      carryOver = 0;
+    }
+    newList = newList.next;
+  }
+  if(carryOver > 0){
+    newList.next = new Node(1);
+  }
+return head;
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
+
+let A = new Node(8);
+let B = new Node(1);
+let C = new Node(3);
+let D = new Node(8);
+A.next = B;
+C.next = D;
+
+console.log(addLinkedList(A,C)) 
