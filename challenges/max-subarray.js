@@ -11,4 +11,6 @@ function maxSubarray(arr) {
 
 }
 
+
+console.log(maxSubarray())
 module.exports = maxSubarray;
