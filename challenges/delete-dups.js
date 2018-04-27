@@ -26,6 +26,7 @@ function deleteDups(head) {
 
         if(ifHit){
             node = node.next;
+            ifHit = false;
         } else {
             prvnode = node;
             node = node.next
