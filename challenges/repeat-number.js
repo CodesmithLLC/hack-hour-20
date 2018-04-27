@@ -21,5 +21,7 @@ function repeatNumbers(array) {
 }
 
 console.log(repeatNumbers([1,2,3,7,3,4,6,9]));
+let n = 10;
+console.log(n.toString(2));
 
 module.exports = repeatNumbers;
