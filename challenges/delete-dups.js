@@ -13,7 +13,27 @@
 
 
 function deleteDups(head) {
+    let obj = {}
+    let node = head;
+    let prevnode;
+    let ifHit = false;
+    while(node){
+        if(obj[node.value] === false){
+            obj[node.value] = true;
+            prevnode = node.next;
+            ifHit = true;
+        }
 
+        if(ifHit){
+            node = node.next;
+        } else {
+            prvnode = node;
+            node = node.next
+        }
+
+
+    }
+    return head;
 }
 
 module.exports = deleteDups;
