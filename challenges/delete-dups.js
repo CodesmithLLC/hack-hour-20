@@ -20,6 +20,8 @@ function deleteDups(head) {
     while(node){
         if(obj[node.value] === false){
             obj[node.value] = true;
+        }
+        if(obj[node.value] === true){
             prevnode = node.next;
             ifHit = true;
         }
@@ -28,7 +30,7 @@ function deleteDups(head) {
             node = node.next;
             ifHit = false;
         } else {
-            prvnode = node;
+            prevnode = node;
             node = node.next
         }
 
