@@ -13,7 +13,7 @@
 
 
 function deleteDups(head) {
-//sort linked list
+//sort linked list 
 let current = this.head
 let previous = this.head
 if(current.value < this.next.value) {
