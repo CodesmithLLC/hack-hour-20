@@ -22,10 +22,10 @@ function romanNumeral(n) {
   function whereToStart() {
   var romanArr = [[I,1], [V,5], [X,10], [L,50]]
     for(var i = 0; i < romanArr.length; i++) {
-    if((romanArr[i][1] - romanArr[i-1][1]) < romanArr[i-1][1]) {
-      romanReturn +=
-      }
-    }
+    // if((romanArr[i][1] - romanArr[i-1][1]) < romanArr[i-1][1]) {
+    //   romanReturn +=
+    //   }
+     }
   }
 }
 
