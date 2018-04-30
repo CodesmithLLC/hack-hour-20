@@ -1,3 +1,8 @@
+//////////////////
+///Needs Review///
+//////////////////
+
+
 /**
  * Write a function to see if a binary tree "superbalanced".
  * An empty tree is balanced. A non-empty binary tree T is balanced if:
@@ -21,7 +26,7 @@ phillip.left.right = new BinaryTree(6);
 
 
 BinaryTree.prototype.searchLevel = function (tree) {
-  
+
 }
 
 function superbalanced(tree) {

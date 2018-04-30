@@ -1,3 +1,7 @@
+//////////////////
+///Needs Review///
+//////////////////
+
 /**
  *  I have an array stock_prices_yesterday where:
  *
@@ -11,6 +15,7 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
+
 
 function bestProfit(stock_prices_yesterday) {
     let compare = [];

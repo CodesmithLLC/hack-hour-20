@@ -1,3 +1,7 @@
+//////////////////
+///Needs Review///
+//////////////////
+
 'use strict';
 /**
  * Write a function to reverse an array in place
@@ -23,7 +27,7 @@
 
 function reverseInPlace(array){
     for(let i = 0, f = array.length-1; i < f; i++, f--){
-        [array[i],array[f]] = [array[f], array[i]]; 
+        [array[i],array[f]] = [array[f], array[i]];
     }
     return array;
 }

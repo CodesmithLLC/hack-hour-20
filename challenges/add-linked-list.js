@@ -1,3 +1,8 @@
+//////////////////
+///Needs Review///
+//////////////////
+
+
 /* You have two numbers represented by linked lists. Each node contains a single digit. The digits
  * are stored in reverse order, such that the 1's digit is at the head of the list. Write
  * a function that adds the two numbers and returns the sum as a linked list with the same
@@ -25,7 +30,6 @@ list1.next.next = new Node(5);
 let list2 = new Node(5);
 list2.next = new Node(9);
 list2.next.next = new Node(2);
-
 
 //super long way probably a better solution.
 function addLinkedList(l1, l2) {
@@ -56,6 +60,34 @@ function addLinkedList(l1, l2) {
   return parseInt(addAndReverse(value1, value2));
 }
 
-console.log(addLinkedList(list1, list2));
+console.log(addLinkedList(list1, list2)); // ===> 708
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
+
+
+
+//////////////////////
+/////CS Solutions/////
+//////////////////////
+
+//recursive solution
+function addLinkedList(l1, l2, carryover) {
+  if (!l1 && !l2 && !carryover) return null;
+
+  let sum = carryover || 0;
+  if (l1) sum += l1.value;
+  if (l2) sum += l2.value;
+
+  const result = new Node(sum % 10);
+
+  if (l1 || l2) {
+    const rest = addLinkedList(
+      l1 ? l1.next : null, //these are turnarys that are evealuating to form the next call to addLinkedList().
+      l2 ? l2.next : null, //these are turnarys that are evealuating to form the next call to addLinkedList().
+      sum >= 10 ? 1 : 0    //these are turnarys that are evealuating to form the next call to addLinkedList().
+    );
+    result.next = rest;
+  }
+
+  return result;
+}
