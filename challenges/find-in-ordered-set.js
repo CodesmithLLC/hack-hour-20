@@ -10,9 +10,32 @@ findInOrderedSet(nums, 2);  -> false
  */
 
 
-function findInOrderedSet(arr, target) {
+function findInOrderedSet(arr, target, oneCount = 0) {
+  if (arr.length === 0 || !Array.isArray(arr) || oneCount === 2) {
+    return false;
+  }
+  let midInd = Math.floor(arr.length/2);
+  let middle = arr[midInd];
+  let newArr;
 
+  if (middle === target) {
+    return true;
+  } else if (target < middle) {
+    newArr = arr.slice(0, midInd);
+    if (newArr.length <= 1) {
+      oneCount++
+    } else if (newArr[newArr.length-1] < target) {
+      return false;
+    }
+  } else {
+    newArr = arr.slice(midInd, arr.length);
+    if (newArr.length <= 1) {
+      oneCount++
+    } else if (newArr[0] > target) {
+      return false;
+    }
+  }
+  return findInOrderedSet(newArr, target, oneCount);
 }
-
 
 module.exports = findInOrderedSet;
