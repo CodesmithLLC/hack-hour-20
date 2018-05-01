@@ -7,10 +7,21 @@
  * BONUS:
  * Complete the challenge in O(n) time
  * Complete the challenge in O(1) space
- *
  */
-function uniqueNumber(array) {
+
+/////first try/////
+//this doesnt accomplish the o(1) space complexity.//
+
+// function uniqueNumber(array) {
+//     let obj = {}
+//     array.forEach(e => {
+//         obj.hasOwnProperty(e)? obj[e]++ : obj[e] = 1;
+//     });
+//     return Object.entries(obj).filter(e => e[1] === 1)[0][0];
+// }
+
+function uniqueNumber(array){
 
 }
-
+console.log(uniqueNumber([1,2,1,3,3]));
 module.exports = uniqueNumber;
