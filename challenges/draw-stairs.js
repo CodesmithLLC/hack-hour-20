@@ -1,6 +1,6 @@
-//////////////////
-///Needs Review///
-//////////////////
+//////////////////////
+///Review Completed///
+//////////////////////
 
 /* Write a function that console logs a staircase of any given height where 1 <= N <= 100.
  The staircase must climb up from left to right. The last line should only consist of asterisks,
@@ -74,23 +74,19 @@ function sum(...args) {
 
 //refactor #2 (recurssive);
 function drawStairs(n, counter = 0, carryover = '') {
-    console.log({n, counter, carryover});
     //base case
     if(counter === n){
         return carryover;
     }
-    console.log({n, counter})
-    console.log(n-counter-1, 'here');
     const addStar = (str, wsCount, starCount) => {
         //?????*\n????**\n???***\n??****\n?*****\n******\n
-        str += '?'.repeat(wsCount); //?????
-        str += '*'.repeat(starCount);//*
-        str += '\n';
-        return str.substring(1);
+        str += ' '.repeat(wsCount);
+        str += '*'.repeat(starCount);
+        str+= '\n';
+        return str;
     }
-
-    return drawStairs(n, ++counter, addStar(carryover, n - counter - 1, counter + 1));
+    return drawStairs(n, ++counter, addStar(carryover, n - counter, counter));
 }
 
 
-console.log(drawStairs(6))
+console.log(drawStairs(60))
