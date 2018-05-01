@@ -1,3 +1,7 @@
+//////////////////
+///Needs Review///
+//////////////////
+
 /**
  * Write a function that takes two parameters, an integer and the head of a
  * singly linked list, and returns the VALUE on the kth to last node in the list.
@@ -12,13 +16,13 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-let array = []; 
+let array = [];
   while(head.next){
     array.push(head.value);
     head=head.next;
-  } 
+  }
   array.push(head.value);
-  return array[array.length - k]; 
+  return array[array.length - k];
 }
 
 const a = new Node('A');
@@ -33,5 +37,5 @@ c.next = d;
 d.next = e;
 
 
-console.log(kthToLastNode(2, a)); 
+console.log(kthToLastNode(2, a));
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

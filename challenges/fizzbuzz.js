@@ -1,3 +1,8 @@
+//////////////////
+///Needs Review///
+//////////////////
+
+
 // Write a function that returns an array containing the numbers 1 to NUM. Put "fizz" in place of numbers divisble by 3, "buzz" in place of numbers divisble by 5, and "fizzbuzz" in place of numbers divisble by both 3 and 5
 // fizzbuzz(16);  -> [ 1,
 //                     2,
@@ -17,9 +22,9 @@
 //                     16 ]
 
 let fizzbuzz = num => {
-    let result = []; 
+    let result = [];
     for(let i = 1; i <= num; i++){
-        i % 3 ===0 && i % 5 === 0 ? result.push("fizzbuzz") : i % 3 === 0 ? result.push("fizz"): i % 5 === 0 ? result.push("buzz"): result.push(i); 
+        i % 3 ===0 && i % 5 === 0 ? result.push("fizzbuzz") : i % 3 === 0 ? result.push("fizz"): i % 5 === 0 ? result.push("buzz"): result.push(i);
     }
     return result;
 }

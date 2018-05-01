@@ -1,3 +1,7 @@
+//////////////////
+///Needs Review///
+//////////////////
+
 /*
  * write a function that takes a string of text and returns true if
  * the parentheses are balanced and false otherwise.
@@ -25,18 +29,18 @@
  */
 
 function balancedParens(input) {
-    let openings = ["(", "[", "{"]; 
-    let closings = [")", "]", "}"]; 
+    let openings = ["(", "[", "{"];
+    let closings = [")", "]", "}"];
     let result = [];
     let foo = input.split('');
     for(let i = 0; i < foo.length; i++){
         if(openings.includes(foo[i])){
             result.push(foo[i]);
         }else if(closings.includes(foo[i]) && result[result.length-1] === openings[closings.indexOf(foo[i])]){
-            result.pop(); 
+            result.pop();
         }
     }
-    return result.length === 0; 
+    return result.length === 0;
 }
 console.log("These should be true: ");
 console.log(balancedParens('()')); // true
