@@ -12,8 +12,8 @@ function twoSum(arr, n) {
 }
 
 
-console.log(twoSum([0,0], 0))
-console.log(twoSum([6,4], 11))
+console.log(twoSum([0,0,1,1,], 3))
+console.log(twoSum([6,4,5], 10))
 console.log(twoSum([2,3], 4))
 
 
