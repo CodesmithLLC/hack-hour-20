@@ -10,7 +10,15 @@
  *
  */
 function uniqueNumber(array) {
-
+  let matchObj = {};
+  for (let i = 0; i < array.length; i++) {
+    if (!matchObj[array[i]]) {
+      matchObj[array[i]] = true;
+    } else {
+      delete matchObj[array[i]];
+    }
+  }
+  return Object.keys(matchObj)[0];
 }
 
 module.exports = uniqueNumber;

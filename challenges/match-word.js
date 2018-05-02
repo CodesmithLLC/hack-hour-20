@@ -11,7 +11,45 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  if (str === '') {
+    return true;
+  }
+  const wordArray = [];
+  const pattern=/^[a-zA-Z]*$/;
+  let onWord = false;
+  let firstIndex;
+  let lastIndex;
+  for (let i = 0; i < str.length; i++) {
+    if (pattern.test(str[i])) {
+      if (onWord === false && i !== str.length - 1) {
+        firstIndex = i;
+        onWord = true;
+      } else if (onWord === true && i === str.length - 1) {
+        lastIndex = i;
+        wordArray.push(str.slice(firstIndex, lastIndex + 1));
+      }
+    } else {
+      if (onWord === true) {
+        lastIndex = i;
+        wordArray.push(str.slice(firstIndex, lastIndex));
+        onWord = false;
+      }
+    }
+  }
+  let orderArray = [wordArray[0]];
+  for (let j = 1; j < wordArray.length; j++) {
+    let curStr = wordArray[j];
+    if (curStr.split("").reverse().join("").toLowerCase() !== orderArray[orderArray.length - 1].toLowerCase()) {
+      orderArray.push(curStr);
+    } else {
+      orderArray.pop();
+    }
+  }
+  if (orderArray.length === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = matchWord;
