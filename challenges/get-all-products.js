@@ -10,6 +10,9 @@
  */
 
 function getAllProducts(array) {
+    if(!Array.isArray(array) || array.length === 0){
+        return [0]
+    }
     let returnArr = [];
     array.forEach((cur,ind,arr)=>{
         let array = arr.slice(0,arr.length)
@@ -18,6 +21,5 @@ function getAllProducts(array) {
     })
     return returnArr
 }
-console.log(getAllProducts([1, 7, 3, 4]))
 
 module.exports = getAllProducts;
