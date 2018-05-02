@@ -10,16 +10,14 @@
  */
 
 function getAllProducts(array) {
+    if(array.length === 0) return [0]
     let newArr = []
     for(let i = 0; i < array.length; i++) {
         let multNum = 1;
         for(let j = 0; j < array.length; j++){
-            console.log('j', j ,'i', i)
-        //check if new var = i
             if(j !== i) {
                 multNum *= array[j]
             }
-        //if no, mult and push to newArr
         }
         newArr.push(multNum)
     }
