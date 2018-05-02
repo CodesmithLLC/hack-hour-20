@@ -17,9 +17,10 @@ function getAllProducts(array) {
     array.forEach((cur,ind,arr)=>{
         let array = arr.slice(0,arr.length)
         array.splice(ind,1)
-        returnArr.push(array.reduce((x,y)=>x*y))
+        returnArr.push(array.reduce((x,y)=>x * y))
     })
-    return returnArr
+    array = returnArr
+    return array
 }
 
 module.exports = getAllProducts;
