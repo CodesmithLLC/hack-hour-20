@@ -10,7 +10,18 @@
  */
 
 function getAllProducts(array) {
-
+	let result = [];
+	if(array.length === 2) {
+		result = array;
+		return result;
+	}
+	for (let i = 0; i < array.length-1; i++) {
+		const products = getAllProducts(array.slice(0,i).concat(array.slice(i+1)));
+		products.forEach(num => {
+			if(result.indexOf(array[i]*num) < 0) result.push(array[i]*num);
+		})
+	}
+	return result;
 }
 
 module.exports = getAllProducts;
