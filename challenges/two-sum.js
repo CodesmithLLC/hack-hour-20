@@ -3,9 +3,12 @@
  */
 
 function twoSum(arr, n) {
-  for(let i = 0; i < arr.length; i++){
-   if(arr.includes(n - arr[i])){
-     return true;
+  let newObj = {};
+  for (let i = 0; i < arr.length; i++) {
+   if (newObj[arr[i]]) {
+    return true;
+   } else {
+    newObj[n - arr[i]] = 1;
    }
   }
   return false;
@@ -14,4 +17,4 @@ function twoSum(arr, n) {
 module.exports = twoSum;
 
 
-console.log(twoSum([3, 6, 11, 4], 5))
+console.log(twoSum([3, 6, 11, 4], 3))
