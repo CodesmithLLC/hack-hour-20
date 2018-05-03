@@ -17,8 +17,3 @@ function uniqueNumber(array) {
   return result;
 }
 module.exports = uniqueNumber;
-
-console.log(uniqueNumber([1,2,1,3,3]));// -> 2
-
-
-console.log(-~2);
