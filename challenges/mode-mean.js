@@ -11,7 +11,23 @@
 
 
 function modemean(array) {
-
+  let mean = Math.floor(array.reduce(function(acc,curr){return acc + curr},0)/array.length)
+  let mode = 0;
+  let obj = array.reduce(function(acc,curr){
+    if(curr in acc){
+      acc[curr]++;
+      return acc;
+    } else {
+      acc[curr]=1;
+      return acc;
+    }
+  },{})
+  for(var keys in obj){
+    if(obj[keys] > mode){
+      mode = keys; 
+    }
+  }
+  return mode == mean;
 }
 
 module.exports = modemean;

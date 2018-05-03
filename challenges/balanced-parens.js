@@ -25,7 +25,46 @@
  */
 
 function balancedParens(input){
-
-}
+    let array = input.split("");
+    if(array.length <= 1){
+      return false;
+    }
+    for(let i = 0; i < array.length; i++){
+      if(array[i] === "("){
+        let j = i;
+        while(j <= array.length){
+          if(array[j] === ")"){
+            j = array.length;
+          } else if(j === array.length){
+            return false;
+          }
+          j++;
+        }
+      }
+      if(array[i] === "{"){
+        let j = i;
+        while(j <= array.length){
+          if(array[j] === "}"){
+            j = array.length;
+          } else if(j === array.length){
+            return false;
+          }
+          j++;
+        }
+      }
+      if(array[i] === "["){
+        let j = i;
+        while(j <= array.length){
+          if(array[j] === "]"){
+            j = array.length;
+          } else if(j === array.length){
+            return false;
+          }
+          j++;
+        }
+      }
+    }
+    return true;
+  }
 
 module.exports = balancedParens;

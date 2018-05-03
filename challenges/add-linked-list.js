@@ -18,7 +18,42 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
+  let newTen = false;
+  let newNum = l1.value + l2.value;
+  if(newNum > 10){
+    newNum = newNum - 10;
+    newTen = true;
+  }
+  let newLinkedList = new Node(newNum);
+  let linkedListPointer = newLinkedList;
+  if(l1 && l2){
+    l1 = l1.next;
+    l2 = l2.next;
+  }
+
+  while(l1 && l2){
+    let newNode = new Node(l1.value + l2.value);
+    if(newTen === true){
+      newNode.value++
+      newTen = false;
+    }
+    if(newNode.value > 10){
+      newNode.value = newNode.value - 10;
+      newTen = true;
+    }
+    console.log("newnode", newNode)
+    linkedListPointer.next = newNode;
+    newNode = linkedListPointer;
+    l1 = l1.next;
+    l2 = l2.next;
+    console.log("linkedListPointer", linkedListPointer)
+
+  }
+
+
+  return newLinkedList;
 
 }
+
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

@@ -12,9 +12,30 @@
  * Extension:
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
+<<<<<<< HEAD
+function binToDec(binary) {
+    let array = binary.split("").reverse();
+    let valueOfCurrentDigit = Math.pow(2,0);
+    let total = 0;
+    for(let i = 0; i < array.length; i++){
+        total += array[i]*valueOfCurrentDigit;
+        valueOfCurrentDigit = valueOfCurrentDigit*2;
+    }
+    return total;
+}
+
+module.exports = binToDec;
+
+console.log(binToDec('0'))   //-> 0
+console.log(binToDec('11'))  //-> 3
+console.log(binToDec('100')) //-> 4
+console.log(binToDec('101')) //-> 5
+console.log(binToDec('0101')) //-> 5
+=======
 
 function binToDec(binary) {
 
 }
 
 module.exports = binToDec;
+>>>>>>> 913483ae3deb210907e9e5fb9f9c851dc30af472

@@ -11,7 +11,22 @@
  */
 
 function repeatNumbers(array) {
+    let obj = array.reduce((acc,curr)=> {
+        if(curr in acc){
+            acc[curr]++
+        } else {
+            acc[curr] = 1;
+        }
+        return acc
+    },{})
 
+    for(key in obj){
+        if(obj[key] === 2){
+            return key    
+        }   
+    }
+    return "fail"
 }
+
 
 module.exports = repeatNumbers;

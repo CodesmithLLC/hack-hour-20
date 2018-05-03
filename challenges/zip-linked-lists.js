@@ -11,6 +11,20 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+<<<<<<< HEAD
+  let node1 = l1;
+  let node2 = l2;
+  let placeholder;
+  while(l1.next !== null){
+    placeholder = node1.next;
+    node1.next = node2;
+    node2.next = placeholder;
+    node1 = l1.next;
+    node2 = l2.next;
+  }
+  return node1
+=======
+>>>>>>> 6167edf081f242251e17a74959e914c56afd15b7
 };
 
 module.exports = {Node: Node, zip: zip};

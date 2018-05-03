@@ -33,7 +33,25 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  // let checkObj = {};
+  // while(head){
+  //   if(checkObj[head] === true){
+  //     return true
+  //   }
+  //   checkObj[head] = true;
+  //   head = head.next
+  // }
+  // return false;
 
+
+  while(head){
+    if(head.passed === true){
+      return true;
+    }
+    head.passed = true;
+    head = head.next;
+  }
+  return false;
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}

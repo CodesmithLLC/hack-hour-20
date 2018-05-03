@@ -11,7 +11,24 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+    str = str.replace(/[.,\/#!$%\^&\[*;:{}=\-_`~()]/g," ").trim()
+    str = str.replace(/]/g,"")
+    let array = str.split(" ")
+    let holdingArray = [];
+    array = array.filter((curr)=> curr !== "")
+    array = array.map((curr)=>curr.toUpperCase())
+    let array1 = array.slice(0, array.length/2)
+    let array2 = array.slice(array.length/2, array.length)
+    array2 = array2.map((curr)=> curr.split("").reverse().join(""))
+    if(array1.length !== array2.length){
+      return false;
+    }
+    for(let i = 0; i < array1.length; i++){
+      if(array1[i] !== array2[i]){
+        return false;
+      }
+    }
+    return true;
+    
 }
-
 module.exports = matchWord;

@@ -16,7 +16,19 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+<<<<<<< HEAD
+  let arr1 = s1.split("")
+  let arr2 = s2.split("")
+  
+  while(arr2[0] !== arr1[0]){
+    arr2.push(arr2.shift())
+  }
+  arr1 = arr1.join("")
+  arr2 = arr2.join("")
+  return arr1 === arr2;
+=======
 
+>>>>>>> 3e28fefa6b1e821fc5aeb9d5f057a6548c5dc1db
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
