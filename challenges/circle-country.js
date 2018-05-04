@@ -23,7 +23,26 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  let count = 0;
+  for (let i = 0; i < x.length; i++) {
+    
+    let xDifStart = x[i] - start_x;
+    let yDifStart = y[i] - start_y;
 
+    let xDifEnd = x[i] - end_x;
+    let yDifEnd = y[i] - end_y;
+    
+    let startDist = Math.pow((Math.pow(xDifStart, 2) + Math.pow(yDifStart, 2)), 0.5);
+    let endDist = Math.pow((Math.pow(xDifEnd, 2) + Math.pow(yDifEnd, 2)), 0.5);
+    
+    if (startDist < r[i]) {
+      count++;
+    }
+    if (endDist < r[i]) {
+      count++;
+    }
+  }
+  return count;
 }
 
 module.exports = circleCountry;
