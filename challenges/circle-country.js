@@ -35,11 +35,14 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
     let startDist = Math.pow((Math.pow(xDifStart, 2) + Math.pow(yDifStart, 2)), 0.5);
     let endDist = Math.pow((Math.pow(xDifEnd, 2) + Math.pow(yDifEnd, 2)), 0.5);
     
-    if (startDist < r[i]) {
-      count++;
-    }
-    if (endDist < r[i]) {
-      count++;
+    if (startDist < r[i] && endDist < r[i]) {
+    } else {
+      if (startDist < r[i]) {
+        count++;
+      }
+      if (endDist < r[i]) {
+        count++;
+      }
     }
   }
   return count;
