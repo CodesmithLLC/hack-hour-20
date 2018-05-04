@@ -36,7 +36,7 @@ LinkedList.prototype.remove = function(val) {
   //set a current to keep track of where you are in the list
   let current = this.head;
   //while there is another node in the list keep going
-  while(this.head.val){
+  while(current){
     //check if the current node is the one your need to remove
     if(current.val === val){
       //Before deleting check if its the head node.
@@ -51,6 +51,7 @@ LinkedList.prototype.remove = function(val) {
       }
       //Delete current node by removing its references in the list
       current.prev.next = current.next;
+      current.next.prev = current.prev;
       return;
     }
       current = current.next
@@ -64,7 +65,7 @@ phillip.add('taco');
 phillip.add('water');
 phillip.add('coffee');
 phillip.add('burrito');
-phillip.remove('taco');
+phillip.remove('ta');
 console.log(phillip, '<----phillip');
 
 console.log('===test===')
