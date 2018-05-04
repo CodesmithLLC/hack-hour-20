@@ -30,11 +30,26 @@
  */
 let addNums = (a, b) => a + b;
 
-function applyIt(func, args) {
-    console.log(arguments);
-    return func(...args);
+/////USING APPLY/////
+// function applyIt(func, args) {
+//     return func.apply(null, args);
+// }
+
+/////USING SPREAD/////
+// function applyIt(func, args) {
+//     return func(...args);
+// }
+
+/////NOT USING APPLY OR SPREAD/////
+function applyIt(func, args){
+    let argString = ``;
+    args.forEach(e => {
+        argString+= e.toString();
+        argString+= ',';
+    });
+   return eval(`func(${argString})`);
 }
 
-console.log(applyIt(addNums, [1,5]));
+console.log(applyIt(addNums, [20,5]));
 
 module.exports = applyIt;
