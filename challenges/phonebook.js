@@ -26,7 +26,6 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
-  console.log("TEST1", jazbook, "TEST1 VAR 2", name)
   for(let i = 0; i < jazbook.length; i++){
     if(jazbook[i][0] === name){
       return true;
@@ -37,7 +36,6 @@ function findName(jazbook, name) {
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
-  console.log("TEST2", jazbook)
   let storage = {};
   for(let i = 0; i < jazbook.length; i++){
     storage[jazbook[i][0]] = jazbook[i][1]
