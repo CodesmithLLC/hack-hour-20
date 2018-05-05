@@ -24,12 +24,12 @@
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
 	let counter = 0;
-	const startInside = (start_x > x[i]-r[i] && start_x < x[i]+r[i]) && (start_y > y[i]-r[i] && start_y < y[i]+r[i]);
-	const endInside = (end_x > x[i]-r[i] && end_x < x[i]+r[i]) && (end_y > y[i]-r[i] && end_y < y[i]+r[i]);
+	const startInside = (index) => (start_x > x[i]-r[i] && start_x < x[i]+r[i]) && (start_y > y[i]-r[i] && start_y < y[i]+r[i]);
+	const endInside = (index) => (end_x > x[i]-r[i] && end_x < x[i]+r[i]) && (end_y > y[i]-r[i] && end_y < y[i]+r[i]);
 	for(let i = 0; i< x.length; i++) {
-		if(endInside && !startInside) {
+		if(endInside(i) && !startInside(i)) {
 			counter++;
-		} else if (startInside && !endInside) {
+		} else if (startInside(i) && !endInside(i)) {
 			counter++;
 		} 
 	}
