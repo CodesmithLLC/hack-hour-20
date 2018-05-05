@@ -25,4 +25,3 @@ function getAllProducts(array) {
 
 module.exports = getAllProducts;
 
-console.log(getAllProducts([1, 7, 3, 4])); //->  [84, 12, 28, 21]
