@@ -18,7 +18,54 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
-
+  let curNode1 = l1;
+  let curNode2 = l2;
+  let output;
+  let carry = 0;
+  while (curNode1 || curNode2) {
+    let value1 = 0;
+    let value2 = 0;
+    if (curNode1) {
+      value1 = curNode1.value;
+    }
+    if (curNode2) {
+      value2 = curNode2.value;
+    }
+    if (curNode1 === l1 && curNode1 || curNode2 === l2 && curNode2) {
+      let add = value1 + value2;
+      if (add >= 10) {
+        carry = 1;
+      }
+      let newVal = add % 10;
+      output = new Node(newVal);
+      curNodeOut = output;
+      if (curNode1) {
+        curNode1 = curNode1.next;
+      }
+      if (curNode2) {
+        curNode2 = curNode2.next;
+      }
+      
+    } else {
+      let add = value1 + value2;
+      let newVal = add % 10;
+      curNodeOut.next = new Node(newVal + carry);
+      if (add >= 10) {
+        carry = 1;
+      }
+      curNodeOut = curNodeOut.next;
+      if (curNode1) {
+        curNode1 = curNode1.next;
+      }
+      if (curNode2) {
+        curNode2 = curNode2.next;
+      }
+    }
+  }
+  if (carry === 1) {
+    curNodeOut.next = new Node(1);
+  }
+  return output;
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

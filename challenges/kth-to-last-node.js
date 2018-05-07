@@ -22,6 +22,26 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  if (k <= 0) {
+    return;
+  }
+  let curNode = head;
+  let totalLength = 0;
+  while (curNode.next !== null) {
+    curNode = curNode.next;
+    totalLength++;
+  }
+  totalLength++;
+  if (k > totalLength) {
+    return;
+  }
+    curNode = head;
+    let count = 0;
+    while (totalLength - count > k) {
+      curNode = curNode.next;
+      count++;
+    }
+    return curNode.value;
 
 }
 

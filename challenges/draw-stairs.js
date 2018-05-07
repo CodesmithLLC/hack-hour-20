@@ -14,7 +14,24 @@
 */
 
 function drawStairs(n) {
-
+  if (n >= 1 && n <= 100) {
+    for (let i = 1; i <= n; i++) {
+      var stars = i;
+      var spaces = n - stars;
+      var starString = '';
+      for (let j = 1; j <= stars; j++) {
+        starString += '*'
+      }
+      spaceString = '';
+      for (let m = 1; m <= spaces; m++) {
+        spaceString += ' ';
+      }
+      var stair = spaceString.concat(starString);
+      console.log(stair);
+    }
+  } else {
+    console.log('Please choose a number between 1 and 100');
+  }
 }
 
 
