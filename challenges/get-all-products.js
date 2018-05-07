@@ -13,7 +13,7 @@ function getAllProducts(array) {
   let result = [];
   for (let i = 0; i < array.length; i++) {
     let initNum = 1;
-    console.log('hello')
+    //console.log('hello')
     for (let j = 0; j < array.length; j++) {
       if (array[j] !== array[i]) initNum *= array[j];
     }
