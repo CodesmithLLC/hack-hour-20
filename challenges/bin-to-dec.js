@@ -14,7 +14,7 @@
  *  binToDec('0101') -> 5
  *
  * Extension:
- * Write a function that converts a decimal number to binary (then maybe hexadecimal)
+ * Write a function that converts a decimal number to binary (then maybe hexad ecimal)
  */
 
 function binToDec(binary) {
@@ -24,8 +24,6 @@ function binToDec(binary) {
 }
 
 // let decToBin = (n, binary = '') => {
-
-
 //     return binary + decToBin(n - something, binary )
 
 //     //largest power of 2 before you go over
@@ -40,12 +38,13 @@ function binToDec(binary) {
 //     // for(let j = result.length-1, i = 0 ; i > 0 ; j--, i++){
 //     //     result[i] = n / Math.pow(2, j)
 //     // }
-
-
-
-
-
 // }
-// console.log(decToBin(13));
-console.log(Math.log2(13));
+
+
+console.log('=====Tests=====');
+console.log(binToDec('0'));    //-> 0
+console.log(binToDec('11'));   //-> 3
+console.log(binToDec('100'));  //-> 4
+console.log(binToDec('101'));  //-> 5
+console.log(binToDec('0101')); //-> 5
 module.exports = binToDec;

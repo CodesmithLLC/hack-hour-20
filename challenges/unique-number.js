@@ -20,7 +20,9 @@
 //     return Object.entries(obj).filter(e => e[1] === 1)[0][0];
 // }
 
-function uniqueNumber(array){
+/////Refactor/////
+function uniqueNumber(array, carryover = {}){
+    
 
 }
 console.log(uniqueNumber([1,2,1,3,3]));
