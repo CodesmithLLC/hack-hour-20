@@ -11,7 +11,35 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+    //assume can move to 8 spaces
+    let total = 8
+    //if x is 1 space from edge remove 4, if 2 spaces remove only 2
+    if(str[1] - 2 <= 0) {
+        total - 2
+    }
+    if(str[1] - 1 <= 0) {
+        total - 4
+    }
+    if(str[1] + 2 >= 8) {
+        total - 2
+    }
+    if(str[1] + 1 >= 8) {
+        total - 4
+    }
+    if(str[3] - 2 <= 0) {
+        total - 2
+    }
+    if(str[3] - 1 <= 0) {
+        total - 4
+    }
+    if(str[3] + 2 >= 8) {
+        total - 2
+    }
+    if(str[3] + 1 >= 8) {
+        total - 4
+    }
+    return total
+    //if overlap?
 }
-
+console.log(knightjumps((2 4))
 module.exports = knightjumps;
