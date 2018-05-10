@@ -11,7 +11,16 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+  let pos = str.replace(' ', '').replace('(', '').replace(')', '')
+  let moves = [[2, 3, 4, 4, 4, 4, 3, 2],
+  [3, 4, 6, 6, 6, 6, 4, 3],
+  [4, 6, 8, 8, 8, 8, 6, 4],
+  [4, 6, 8, 8, 8, 8, 6, 4],
+  [4, 6, 8, 8, 8, 8, 6, 4],
+  [4, 6, 8, 8, 8, 8, 6, 4],
+  [3, 4, 6, 6, 6, 6, 4, 3],
+  [2, 3, 4, 4, 4, 4, 3, 2]]
+  return moves[pos[0]-1][pos[1]-1];
 }
 
 module.exports = knightjumps;
