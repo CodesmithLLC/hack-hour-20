@@ -11,9 +11,27 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+    let possibleMoves = [];
     let x = parseInt(str[1]);
     let y = parseInt(str[3]);
-    console.log(x, y)
+    possibleMoves.push([x+2, y+1])
+    possibleMoves.push([x+2, y-1])
+    possibleMoves.push([x-2, y+1])
+    possibleMoves.push([x-2, y-1])
+    possibleMoves.push([x+1, y+2])
+    possibleMoves.push([x+1, y-2])
+    possibleMoves.push([x-1, y+2])
+    possibleMoves.push([x-1, y-2])
+
+    possibleMoves = possibleMoves.filter((cur)=>{
+        if(cur[1] < 0 || cur[1] > 8 || cur[0] < 0 || cur[0] > 8){
+            return false
+        }
+        return true;
+    })
+
+    return possibleMoves.length
+
 } 
 
 console.log(knightjumps('(4 5)'))
