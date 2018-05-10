@@ -24,13 +24,12 @@ function knightjumps(str) {
     possibleMoves.push([x-1, y-2])
 
     possibleMoves = possibleMoves.filter((cur)=>{
-        if(cur[1] < 0 || cur[1] > 8 || cur[0] < 0 || cur[0] > 8){
+        if(cur[1] < 1 || cur[1] > 9 || cur[0] < 1 || cur[0] > 9){
             return false
         }
         return true;
     })
-    console.log("Recieved String", str)
-    console.log("Possible Moves Array", possibleMoves)
+
     return possibleMoves.length
 
 } 
