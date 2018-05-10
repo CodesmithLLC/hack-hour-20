@@ -29,12 +29,11 @@ function knightjumps(str) {
         }
         return true;
     })
-    console.log(str)
-    console.log(possibleMoves.length)
+    console.log("Recieved String", str)
+    console.log("Possible Moves Array", possibleMoves)
     return possibleMoves.length
 
 } 
 
-console.log(knightjumps('(0 0)'))
 
 module.exports = knightjumps;
