@@ -39,12 +39,28 @@ expectations = {
 
 */
 
-
-
-
 function getPINs(observed) {
-
+  const pins = [
+    ["0", "8"],
+    ["1", "2", "4"],
+    ["1", "2", "3", "5"],
+    ["2", "3", "6"],
+    ["4", "1", "5", "7"],
+    ["5", "2", "4", "6", "8"],
+    ["6", "3", "5", "9"],
+    ["7", "4", "8"],
+    ["8", "5", "7", "9", "0"],
+    ["9", "6", "8"]
+  ];
+  const result = [];
+  if (observed.length === 1) return pins[parseInt(observed)];
+  pins[parseInt(observed.charAt(0))].forEach(num => {
+    getPINs(observed.slice(1)).forEach(n => {
+			result.push(num+n);
+		})
+	});
+	return result;
 }
 
 
-module.exports = getPINs
+module.exports = getPINs;
