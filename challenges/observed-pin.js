@@ -43,8 +43,20 @@ expectations = {
 
 
 function getPINs(observed) {
-
+  let poss = [[8, 0], [1, 2, 4], [1, 2, 3, 5], [2, 3, 6], [1, 4, 5, 7], [2, 4, 5, 6, 8], [3, 5, 6, 9], [4, 7, 8], [5, 7, 8, 9, 0], [6, 8, 9]];
+  let result = []
+  function combos(observed, count = 0, newCombo = '') {
+    if (count >= observed.length) {
+      result.push(newCombo);
+      return;
+    }
+    let ind = JSON.parse(observed[count]);
+    for (let i = 0; i < poss[ind].length; i++) {
+      combos(observed, count + 1, newCombo + poss[ind][i]);
+    }
+  }
+  combos(observed);
+  return result;
 }
-
 
 module.exports = getPINs
