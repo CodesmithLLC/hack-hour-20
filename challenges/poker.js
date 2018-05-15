@@ -20,7 +20,56 @@
  * BONUS2: Create a deck of cards function that generates two random hands for you.
  */
 function poker(hand1, hand2) {
-
+	hand1.sort((a,b)=>(a-b));
+	hand2.sort((a,b)=>(a-b));
+	hand1 = replace(hand1);
+	hand2 = replace(hand2);
+	return check(hand1) > check(hand2) ? 'Player 1 wins' : 'Players 2 wins';
 }
+
+function replace(hand) {
+	return hand.map(card => {
+		if(card === 'Jack') return 11;
+		if(card === 'Queen') return 12;
+		if(card === 'King') return 13;
+		if(card === 'Ace') return 14;
+		return card;
+	})
+}
+
+function check(hand) {
+	let result = 0;
+	const counter = {};
+	for(let i = 0 ; i< hand.length ; i++) {
+		if(counter[hand[i]]) counter[hand[i]]++;
+		else counter[hand[i]] = 1;
+	}
+	if (Object.keys(counter).length > 3) {
+		let prev = 0;
+		Object.keys(counter).forEach(card => {
+			card = parseInt(card);
+			if(counter[card] === 2) result = 100+card;
+			if(prev === 0 ) prev = card;
+			else if(card - prev === 1) prev = card;
+		})
+		if(result > 100 ) null;
+		else if(prev === hand[hand.length-1]) result= 400+hand[hand.length-1];
+		else result = hand[hand.length-1];
+	} else if (Object.keys(counter).length === 3 ) {
+		Object.keys(counter).forEach(card => {
+			card = parseInt(card);
+			if(counter[card] === 3) result = 300+card;
+			if(counter[card] === 2) result = 200+card;
+		})
+	} else {
+		Object.keys(counter).forEach(card => {
+			card = parseInt(card);
+			if(counter[card] === 4) result = 600+card;
+			if(counter[card] === 3) result = 500+card;
+		})
+	}
+	return result;
+}
+
 
 module.exports = poker;
