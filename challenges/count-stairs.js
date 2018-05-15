@@ -6,8 +6,8 @@
  * 1 + 1 + 1 + 2
  * 1 + 1 + 2 + 1
  * 1 + 2 + 1 + 1
- * 1 + 2 + 2
  * 2 + 1 + 1 + 1
+ * 1 + 2 + 2
  * 2 + 1 + 2
  * 2 + 2 + 1
  *
@@ -15,7 +15,25 @@
  */
 
 function countStairs(n) {
-
+    let result = 0
+    let counter = 0;
+    if (n === 1) return 1
+    if (n > 1) {
+        result += n;
+        if (n > 2) {
+            function recurse(n) {
+                if (n > 0) {
+                    result++
+                    n--;
+                    return recurse(n)
+                } else {
+                    return
+                }
+            }
+        }
+    }
+    if (n > 2) recurse(n-1)
+    return result
 }
 
 module.exports = countStairs;
