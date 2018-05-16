@@ -40,7 +40,20 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
-  
+	const month = {'Jan': 01, 'Feb': 02, 'Mar': 03, 'Apr': 04, 'May': 05, 'Jun': 06, 'Jul': 07, 'Aug': 08, 'Sep': 09, 'Oct': 10, 'Nov': 11, 'Dec': 12};
+	const day = {'Monday': 2, 'Tuesday': 1, 'Wednesday': 7, 'Thursday': 6, 'Friday': 5, 'Saturday': 4, 'Sunday': 3, 'Today': 0 };
+	const dateArr = str.split(' ');
+	if(month[dateArr[0]]) {
+		const dateStr = `${month[dateArr[0]]}/${dateArr[1].match(/\d/g).join('')}/2018 ${dateArr[2]}:00`;
+		return new Date(dateStr).toDateString()+' '+new Date(dateStr).toTimeString();
+	} else if(day[dateArr[0]] !== undefined) {
+		const dateStr = `05/${16-day[dateArr[0]]}/2018 ${dateArr[1]}:00`;
+		return new Date(dateStr).toDateString()+' '+new Date(dateStr).toTimeString();
+	} 
+	return new Date().now();
 }
 
+console.log('12th'.match(/\d/gm).join(''));
+console.log(parseDates('Today 1:09 AM'));
+console.log(new Date('01/12/2018 1:09:00').toDateString());
 module.exports = parseDates;
