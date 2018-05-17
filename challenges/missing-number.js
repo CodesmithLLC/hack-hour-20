@@ -26,6 +26,12 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  let test = (Array.length + 1) * (Array.length + 2)/ 2;
+  let actual = 0;
+  for (let i = 0; i < Array.length; i++) {
+    actual += Array[i];
+  }
+  return test - actual;
 }
 
 module.exports = missingNum;
