@@ -27,16 +27,16 @@ Challange:
 */
 function missingNum(Array) {
   let sortedArr = Array.sort((a,b) => a - b);
-  let start = sortedArr.length - sortedArr[0];
+  let start = sortedArr[0];
 
   for(let i = 0; i < sortedArr.length; i++, start++){
     if(sortedArr[i] !== start ){
+      
       return start
     }
   }
   return false;
 }
 
-console.log(missingNum([1,2,4,5]))
 
 module.exports = missingNum;
