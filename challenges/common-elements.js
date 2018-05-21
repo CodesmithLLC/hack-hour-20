@@ -33,5 +33,6 @@ function commonElements(array1, array2, array3, array4){
   return returnArr
 }
 
+console.log(commonElements(array1,array2,array3,array4))
 
 module.exports = commonElements;
