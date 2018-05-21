@@ -13,6 +13,7 @@
 // if there are no common numbers or strings return the string "Nothing in Common!"
 
 function commonElements(array1, array2, array3, array4){
+  console.log([...arguments])
   let firstArray = array1.filter((curr,ind,arr)=>{
     return arr.indexOf(curr) === ind
   })
@@ -25,7 +26,9 @@ function commonElements(array1, array2, array3, array4){
     })
   },firstArray)
 
-  
+  if(returnArr.length === 0){
+    return "Nothing in Common!"
+  }
 
   return returnArr
 }
