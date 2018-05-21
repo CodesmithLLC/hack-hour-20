@@ -18,11 +18,11 @@ function commonElements(array1, array2, array3, array4){
     if((array2.includes(array1[i]) === true) &&
       (array3.includes(array1[i]) === true) &&
       (array4.includes(array1[i]) === true)) {
-      console.log(array1[i])
       if(!(newArr.includes(array1[i])))
       newArr.push(array1[i])
     }
   }
+  if(newArr.length === 0) return "Nothing in Common!"
   return newArr
 }
 
