@@ -10,7 +10,18 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
-
+	const values = [];
+	for(let i = 0; i < items.length; i++){
+		const result = 0;
+		if(items[i].weight < weightAvailable){
+			result += solveKnapsack([...items.slice(0,i),...items.slice(i+1)],weightAvailable-items[i].weight);
+			return items[i].value;
+		} else if(items[i].weight > weightAvailable) {
+			null;
+		}
+		values.push(result);
+	}
+	
 };
 
 module.exports = solveKnapsack;
