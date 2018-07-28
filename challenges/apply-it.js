@@ -25,8 +25,24 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
+ // FIXME
 
+function applyIt(func, args) {
+    // console.log(args.toString());
+    let str = JSON.stringify(args);
+    console.log(str);
+    console.log(args.slice(0, str.length-1));
+    for (let i = 0; i < args.length; i++) {
+
+    }
+    return func();
 }
+
+let jae = function (name, age, location) {
+    return name + " is " + age + " and he lives in " + location;
+};
+
+let jaero = applyIt(jae, ["Jae", 19, "South Carolina"]);
+console.log(jaero); //Returns "Jae is 19 and he lives in South Carolina"
 
 module.exports = applyIt;

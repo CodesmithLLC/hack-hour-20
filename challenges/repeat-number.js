@@ -10,26 +10,37 @@
  *
  */
 
-function repeatNumbers2(array) {
-  let obj = {};
+const repeatNumbers1 = array => {
+  const obj = {};
   for (let i = 0; i < array.length; i++) {
-    if (!obj.hasOwnProperty(array[i].toString())) {
+    if (!obj.hasOwnProperty(array[i])) {
       obj[array[i].toString()] = 1;
     } else {
-      return i;
+      return array[i];
     }
   }
-}
+};
 
-function repeatNumbers(array) {
-  return array.sort((a,b) => {
-    if (a == b) {
-      return a;
-    }
-  });
-}
+const repeatNumbers2 = array => {
+  const n = array.length - 1;
+  const targetSum = (n * (n + 1)) / 2;
+  const actualSum = array.reduce((sum, currentValue) => sum + currentValue);
+  return actualSum - targetSum;
+};
 
-const myArr = [2, 3, 3, 5, 6, 8, 7, 9, 10, 2];
-console.log(repeatNumbers(myArr));
+const repeatNumbers3 = (array) => {
+  let result = 0;
+  for (let i = 0; i < array.length; i++) {
+    result = result ^ i ^ array[i];
+  }
+  return result;
+};
 
-module.exports = repeatNumbers;
+const myArr = [1, 2, 3, 8, 4, 8, 5, 6, 7, 9];
+// const myArr = [3, 2, 1];
+
+// console.log(repeatNumbers1(myArr));
+// console.log(repeatNumbers2(myArr));
+console.log(repeatNumbers3(myArr));
+
+module.exports = repeatNumbers1;

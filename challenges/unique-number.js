@@ -1,3 +1,5 @@
+// import { getMaxListeners } from 'cluster';
+
 /**
  * Write a function that will take an array of integers, all of which will appear exactly twice,
  * except for one integer that will appear exactly once. Return the integer that appears once.
@@ -10,7 +12,10 @@
  *
  */
 function uniqueNumber(array) {
-
+  const mySum = array.reduce((sum, elem) => sum + elem);
+  const max = Math.max(...array);
+  return Math.abs(mySum - max * (max + 1));
 }
+console.log(uniqueNumber([1, 2, 1, 3, 3]));
 
 module.exports = uniqueNumber;

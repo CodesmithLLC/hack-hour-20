@@ -21,9 +21,19 @@ eachPermutation([1, 2, 3], function(perm) {
 */
 
 function eachPermutation(arr, callback) {
-
+  let result = [];
+  function permute(arr) {
+    if (arr.length !== 1) {
+      permute(arr.slice(1));
+    }
+  }
+  result.forEach(perm => callback(perm));
+  permute(arr);
 }
 
-
+const callback = perm => {
+  console.log(perm);
+};
+eachPermutation([1, 2, 3], callback);
 
 module.exports = eachPermutation;

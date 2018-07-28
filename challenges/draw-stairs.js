@@ -13,24 +13,32 @@
 
 */
 
+// function drawStairs(n) {
+//   if (n >= 1 && n <= 100) {
+//     for (let i = 1; i <= n; i++) {
+//       let floor = '';
+//       for (let j = 0; j < n - i; j++) {
+//         floor += ' ';
+//       }
+//       for (let j = 0; j < i; j++) {
+//         floor += '*';
+//       }
+//       console.log(floor);
+//     }
+//   } else {
+//     return 'n is not in range';
+//   }
+// }
+
+
 function drawStairs(n) {
-        if (n >= 1 && n <= 100) {
-        for (let i = 1; i <= n; i++) {
-            let floor = '';
-            for (let j = 0; j < n-i; j++) {
-                floor += ' ';
-            }
-            for (let j = 0; j < i; j++) {
-                floor += '*';
-            }
-            console.log(floor);
-        }
-    }
-    else {
-        return 'n is not in range';
+    for (let i = 1; i <= n; i++) {
+      const spaces = ' '.repeat(n - i);
+      const splats = '*'.repeat(i);
+      console.log(spaces + splats);
     }
 }
-
-drawStairs(6);
+  
+// drawStairs(6);
 
 module.exports = drawStairs;

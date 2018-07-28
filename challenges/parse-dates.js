@@ -40,7 +40,34 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
+  let strArr = str.split(' ');
+  console.log(strArr);
+  if (str[0] = )
+  let months = {
+    Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12,
+  }
+  let year = 2018;
+  let month = 
+  let day = 3;
+  let hours = 3;
+  let minutes = 40;
+
+  const d = new Date(year, month, day, hours, minutes );
+  console.log(d);
   
 }
+
+// Thursday 12:37 PM
+// Nov 19th 1:12 PM
+// Mar 1st 6:09 PM
+// Monday 5:33 PM
+// Friday 7:04 PM
+// Today 2:01 PM
+// console.log(parseDates('Today 2:01 PM'));
+// console.log(parseDates('Monday 5:33 PM'));
+// console.log(parseDates('Friday 7:04 PM'));
+// console.log(parseDates('Thursday 12:37 PM'));
+console.log(parseDates('Nov 19th 1:12 PM'));
+console.log(parseDates('Mar 1st 6:09 PM'));
 
 module.exports = parseDates;

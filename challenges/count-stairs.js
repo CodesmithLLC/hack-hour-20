@@ -6,8 +6,8 @@
  * 1 + 1 + 1 + 2
  * 1 + 1 + 2 + 1
  * 1 + 2 + 1 + 1
- * 1 + 2 + 2
  * 2 + 1 + 1 + 1
+ * 1 + 2 + 2
  * 2 + 1 + 2
  * 2 + 2 + 1
  *
@@ -15,7 +15,21 @@
  */
 
 function countStairs(n) {
-
+  if (n === 0) return 1;
+  if (n < 0) return 0;
+  return countStairs(n - 1) + countStairs(n - 2);
 }
+
+console.log(countStairs(0));
+console.log(countStairs(1));
+console.log(countStairs(2));
+console.log(countStairs(3));
+console.log(countStairs(4));
+console.log(countStairs(5));
+console.log(countStairs(6));
+console.log(countStairs(7));
+console.log(countStairs(8));
+console.log(countStairs(9));
+console.log(countStairs(10));
 
 module.exports = countStairs;
