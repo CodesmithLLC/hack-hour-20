@@ -6,6 +6,7 @@
  * BONUS: The getMax method should retrieve the maximum value from the stack in O(1) time.
  */
 
+ // FIXME 
 // function Stack() {
 //   // body...
 
@@ -33,9 +34,11 @@ class Stack {
 }
 
 let myStack = new Stack();
-myStack.push(1);
 myStack.push(2);
-myStack.pop();
-myStack.pop();
+// console.log(myStack.push(2));
+console.log(myStack.getMax());
+// myStack.pop();
+// myStack.pop();
 console.log(myStack);
+
 module.exports = Stack;

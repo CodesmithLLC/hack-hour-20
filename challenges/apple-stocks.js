@@ -12,31 +12,47 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(arr) {
-    if (!Array.isArray(arr)) return 0;
-    let max = 0;
-    let maxI = 0;
-    let min = 0;
-    let minI = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > max && maxI < i) {
-            max = arr[i];
-            maxI = i;
-        }
-        else if (arr[i] < min && i < maxI && minI < i) {
-            min = arr[i];
-            minI = i;
-        }
-        // console.log('min', min, 'max', max)
-    }
-    let result = (arr[maxI] - arr[minI]);
-    if (result < 0) return 0;
-    return result;
+ // Kadane's Alg: maxDiff[i] = max(A[i], A[i] - maxDiff[i-1])
+ // [5, 3, 6, 1]
+/**
+ * i = 0 --> max(5)        => maxSum[0] = 5
+ * i = 1 --> max( 2, 2+ -1)  => maxSum[1] = 2
+ * i = 2 --> max( 3, 3 + 2)  => maxSum[2] = 5
+ * i = 3 --> max(-4, -4 + 5) => maxSum[3] = 1
+ */
+
+// brute force
+function bestProfit1(arr) {
+  if (arr.length <= 1) return 0;
+  let overallDiff = 0;
+  for (let i = arr.length-1; i >= 0; i--) {
+      for (let j = i-1; j>=0; j--) {
+          if (arr[i] > arr[j] && (Math.abs(arr[i] - arr[j])) > overallDiff) {
+            console.log(`${arr[i]} - ${arr[j]} = ${arr[i] - arr[j]}`)
+              overallDiff = arr[i] - arr[j];
+          }
+      }
+  }
+  return Math.abs(overallDiff);
 }
+
+function bestProfit2(arr) {
+  if (arr.length <= 1) return 0;
+  let profit = 0;
+  let cheapest = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    cheapest = Math.min(cheapest, arr[i]);
+    profit = Math.max(profit, arr[i] - cheapest);
+  }
+  return profit;
+}
+
+console.log(bestProfit2([7,1,5,3,6,4]));
+
 // let myArr = [10, 20, 30, 40, 20, 330, 40, 5]
-console.log(bestProfit([10, 20, 30, 40, 20, 330, 40, 5]));
-console.log(bestProfit([0, 10, 0, 0, 0, 0, 0, 0]));
-console.log(bestProfit([10, 5, 0, 0, 0, 0, 0, 0]));
+// console.log(bestProfit([10, 20, 30, 40, 20, 330, 40, 5]));
+// console.log(bestProfit([0, 10, 0, 15, 11, 0, 0, 0]));
+// console.log(bestProfit([10, 5, 0, 0, 0, 0, 0, 0]));
 // console.log(bestProfit(['hello', 'bye']));
 
 module.exports = bestProfit;
